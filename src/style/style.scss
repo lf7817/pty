@@ -1,0 +1,110 @@
+body {
+  background: url("../images/w7.jpg") no-repeat;
+  background-size: cover;
+}
+
+body,html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.app-head {
+  position: relative;
+  height: 120px;
+}
+
+.app-title {
+  position: absolute;
+  top: 10px;
+  left: calc(50% - 383px);
+  color: #00ff00;
+  letter-spacing: 3px;
+  font-weight: normal;
+  font-size: 36px;
+}
+
+.app-date {
+  position: absolute;
+  right: 66px;
+  top: 20px;
+  line-height: 50px;
+}
+
+.app-date label {
+  color: #00ff00;
+  margin-right: 12px;
+}
+
+.app-date input {
+  height: 34px;
+  border: 2px solid #fff;
+  background: transparent;
+  color: #fff;
+}
+
+input[name="date"] {
+  width: 220px;
+  text-indent: 60px;
+}
+
+input[name="time"] {
+  width: 96px;
+  margin-right: 11px;
+  text-indent: 14px;
+}
+
+input[name="day"] {
+  width: 60px;
+  text-indent: 22px;
+}
+
+.app-container {
+  height: calc(100% - 120px);
+}
+.app-router {
+  float: left;
+  width: calc(100% - 294px);
+  height: 100%;
+}
+.app-menu {
+  float: right;
+  width: 294px;
+  height: 100%;
+}
+.app-menu ul {
+  margin-top: 30px;
+  padding-left: 0;
+  height: calc(100% - 60px);
+  min-height: 300px;
+  border-left: 2px solid #fff;
+  list-style: none;
+
+}
+
+.app-menu ul li {
+  display: block;
+  height: 20%;
+  min-height: 100px;
+  //max-height: 140px;
+}
+
+.app-menu ul li a {
+  position: relative;
+  top: calc(50% - 29.5px);
+  display: block;
+  margin-left: 65px;
+  width: 164px;
+  height: 59px;
+  line-height: 59px;
+  color: #000;
+  font-weight: bold;
+  letter-spacing: 4px;
+  text-decoration: none;
+  text-align: center;
+  background: url(../images/btn.png) no-repeat;
+}
+.app-menu ul li a:hover, .app-menu ul li a.active {
+  background: url(../images/btn_hover.png) no-repeat;
+}
