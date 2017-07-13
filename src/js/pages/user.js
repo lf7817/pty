@@ -1,12 +1,11 @@
 /* eslint-disable no-undef */
-define(['art-template', 'module/mb', 'text!tpl/pb.html'], function (template, mb, tpl) {
+define(['art-template', 'text!tpl/user.html'], function (template, tpl) {
   function render (el, data) {
     var render = template.compile(tpl)
     var html = render(data)
     document.getElementById(el).innerHTML = html
   }
   return function () {
-    render('router-view', {str: '我是页面B'})
-    mb()
+    render('router-view', {str: '我是页面user'})
   }
 })

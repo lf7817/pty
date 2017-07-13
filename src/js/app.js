@@ -20,10 +20,20 @@ require.config({
   }
 })
 
-require(['domReady!', 'router/router'], (doc, router) => {
+require(['domReady!', 'router/router', 'jquery', 'module/dateformat'], (doc, router, $, format) => {
   router.init()
-  setInterval(() => {
-    let date = new Date()
 
+  // 日期
+  setInterval(() => {
+    let d = new Date()
+    $('input[name="date"]').val(format(d, 'yyyy-MM-dd'))
+    $('input[name="time"]').val(format(d, 'hh:mm:ss'))
+    $('input[name="day"]').val(format(d, 'w'))
   }, 1000)
+
+  // 点击菜单修改按钮背景
+  $('#menu ul li a').on('click', function() {
+    $('#menu ul li a').removeClass('active')
+    $(this).addClass('active')
+  })
 })
