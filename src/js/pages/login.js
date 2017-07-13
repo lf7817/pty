@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-define(['art-template', 'text!tpl/user.html'], function (template, tpl) {
+define(['art-template', 'text!tpl/login.html'], function (template, tpl) {
   function render (el, data) {
     var render = template.compile(tpl)
     var html = render(data)

@@ -1,3 +1,4 @@
+@import "user";
 body {
   background: url("../images/w7.jpg") no-repeat;
   background-size: cover;
@@ -6,8 +7,12 @@ body {
 body,html {
   width: 100%;
   height: 100%;
+  min-width: 1200px;
+  min-height: 680px;
   margin: 0;
   padding: 0;
+  font-family: '微软雅黑';
+  font-size: 16px;
 }
 
 .app-head {
@@ -63,16 +68,19 @@ input[name="day"] {
 .app-container {
   height: calc(100% - 120px);
 }
+
 .app-router {
   float: left;
   width: calc(100% - 294px);
   height: 100%;
 }
+
 .app-menu {
   float: right;
   width: 294px;
   height: 100%;
 }
+
 .app-menu ul {
   margin-top: 30px;
   padding-left: 0;
@@ -86,7 +94,7 @@ input[name="day"] {
 .app-menu ul li {
   display: block;
   height: 20%;
-  min-height: 100px;
+  min-height: 102px;
   //max-height: 140px;
 }
 
@@ -105,6 +113,7 @@ input[name="day"] {
   text-align: center;
   background: url(../images/btn.png) no-repeat;
 }
+
 .app-menu ul li a:hover, .app-menu ul li a.active {
   background: url(../images/btn_hover.png) no-repeat;
 }

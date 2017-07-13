@@ -1,0 +1,101 @@
+.user-manage {
+  position: relative;
+  top: 50%;
+  width: 627px;
+  height: 560px;
+  margin: -280px auto 0;
+  background: url("../images/userbg.png") no-repeat;
+  background-size: 100% 100%;
+  overflow: hidden;
+}
+
+.user-manage a {
+  display: block;
+  text-decoration: none;
+  margin-left: auto;
+  margin-right: auto;
+  //font-weight: bold;
+  &:hover {
+    background: url("../images/btn_hover.png") no-repeat;
+    background-size: 100% 100%;
+  }
+}
+.btn-login {
+  margin-top: 80px;
+  width: 168px;
+  height: 72px;
+  line-height: 72px;
+  text-indent: 45px;
+  font-size: 18px;
+  color: #000;
+  letter-spacing: 40px;
+  background: url("../images/loginbtn.png") no-repeat;
+}
+
+.btn-stop {
+  margin-top: 37px;
+  width: 165px;
+  height: 75px;
+  line-height: 75px;
+  text-indent: 38px;
+  font-size: 18px;
+  color: yellow;
+  letter-spacing: 6px;
+  background: url("../images/emergency.png") no-repeat;
+}
+
+.btn-setpwd, .app-login {
+  margin-top: 37px;
+  width: 168px;
+  height: 70px;
+  line-height: 70px;
+  text-indent: 38px;
+  font-size: 18px;
+  color: #000;
+  letter-spacing: 6px;
+  background: url("../images/pwdbtn.png") no-repeat;
+}
+.app-login {
+  margin-top: 70px;
+  letter-spacing: 46px;
+}
+.btn-exit {
+  margin-top: 37px;
+  width: 168px;
+  height: 70px;
+  line-height: 70px;
+  text-indent: 45px;
+  font-size: 18px;
+  color: #000;
+  letter-spacing: 40px;
+  background: url("../images/exit.png") no-repeat;
+}
+[class^="wrapp-input"] {
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+
+  input {
+    width: 220px;
+    height: 36px;
+    line-height: 36px;
+    text-indent: 10px;
+  }
+}
+.wrapp-input-username {
+  margin-top: 180px;
+}
+.wrapp-input-passward {
+  margin-top: 30px;
+}
+
+.wrapp-input-setpwd {
+  width: 360px;
+  margin-bottom: 20px;
+  input {
+    width: 200px;
+  }
+  &:first-child {
+    margin-top: 160px;
+  }
+}

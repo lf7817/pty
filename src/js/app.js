@@ -20,15 +20,15 @@ require.config({
   }
 })
 
-require(['domReady!', 'router/router', 'jquery', 'module/dateformat'], (doc, router, $, format) => {
+require(['domReady!', 'router/router', 'jquery', 'module/dateformat'], (doc, router, $, dformat) => {
   router.init()
 
   // 日期
   setInterval(() => {
     let d = new Date()
-    $('input[name="date"]').val(format(d, 'yyyy-MM-dd'))
-    $('input[name="time"]').val(format(d, 'hh:mm:ss'))
-    $('input[name="day"]').val(format(d, 'w'))
+    $('input[name="date"]').val(dformat(d, 'yyyy-MM-dd'))
+    $('input[name="time"]').val(dformat(d, 'hh:mm:ss'))
+    $('input[name="day"]').val(dformat(d, 'w'))
   }, 1000)
 
   // 点击菜单修改按钮背景
