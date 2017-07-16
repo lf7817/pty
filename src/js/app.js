@@ -1,4 +1,5 @@
 require.config({
+  urlArgs: 'ver=' + 1024,
   baseUrl: 'lib',
   paths: {
     'jquery': 'jquery.min',
@@ -31,9 +32,4 @@ require(['domReady!', 'router/router', 'jquery', 'module/dateformat'], (doc, rou
     $('input[name="day"]').val(dformat(d, 'w'))
   }, 1000)
 
-  // 点击菜单修改按钮背景
-  $('#menu ul li a').on('click', function() {
-    $('#menu ul li a').removeClass('active')
-    $(this).addClass('active')
-  })
 })

@@ -1,0 +1,38 @@
+.app-warning {
+  width: calc(100% - 160px);
+  height: calc(100% - 120px);
+  margin-left: 80px;
+  margin-top: 60px;
+  background: rgb(236, 233, 216);
+  border: 1px solid #000;
+}
+
+.app-warning table {
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+}
+.app-warning table th {
+  padding-top: 1px;
+  padding-left: 1px;
+  padding-bottom: 0;
+  height: 40px;
+  line-height: 40px;
+  border-right: 1px solid #716f64;
+  border-bottom: 1px solid #716f64;
+  background: #fff;
+
+  &:last-child {
+    border-right: none;
+  }
+}
+.app-warning table th span {
+  display: inline-block;
+  width: calc(100% - 1px);
+  height:100%;
+
+  border-right: 2px solid #aca899;
+  border-bottom: 1px solid #aca899;
+  background: rgb(236, 233, 216);
+}
+

@@ -1,1 +1,57 @@
-{{str}}
+<script id="tpl-warning" type="text/html" >
+    {{each list}}
+    <tr>
+        <td>{{$value.time}}</td>
+        <td>{{$value.objname}}</td>
+        <td>{{$value.type}}</td>
+        <td>{{$value.event}}</td>
+        <td>{{$value.currentvalue}}</td>
+        <td>{{$value.jxz}}</td>
+        <td>{{$value.desc}}</td>
+    </tr>
+    {{/each}}
+</script>
+<div class="app-warning">
+    <table>
+        <thead>
+            <tr>
+                <th><span>时间</span></th>
+                <th><span>对象名</span></th>
+                <th><span>报警类型</span></th>
+                <th><span>报警事件</span></th>
+                <th><span>当前值</span></th>
+                <th><span>界限值</span></th>
+                <th><span>报警描述</span></th>
+            </tr>
+        </thead>
+        <tbody id="warning-table-body">
+            <tr>
+                <td>07-07 06:31:28</td>
+                <td>Data0</td>
+                <td>上限报警</td>
+                <td>报警产生</td>
+                <td>120.0</td>
+                <td>100.0</td>
+                <td>Data0上限报警</td>
+            </tr>
+            <tr>
+                <td>07-07 06:31:28</td>
+                <td>Data0</td>
+                <td>上限报警</td>
+                <td>报警产生</td>
+                <td>120.0</td>
+                <td>100.0</td>
+                <td>Data0上限报警</td>
+            </tr>
+            <tr>
+                <td>07-07 06:31:28</td>
+                <td>Data0</td>
+                <td>上限报警</td>
+                <td>报警产生</td>
+                <td>120.0</td>
+                <td>100.0</td>
+                <td>Data0上限报警</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

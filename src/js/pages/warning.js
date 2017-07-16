@@ -1,11 +1,19 @@
 /* eslint-disable no-undef */
-define(['art-template', 'text!tpl/warning.html'], function (template, tpl) {
-  function render (el, data) {
-    var render = template.compile(tpl)
-    var html = render(data)
-    document.getElementById(el).innerHTML = html
-  }
+define(['art-template'], function (template) {
   return function () {
-    render('router-view', {str: '我是页面warning'})
+    let dat = {
+      list:[{
+        time: '07-07 06:21:28',
+        objname: 'Data0',
+        type: '上限报警',
+        event: '报警产生',
+        currentvalue: 120,
+        jxz: '界限值',
+        desc: '报警描述'
+      }]
+    }
+
+    let html = template('tpl-warning', dat)
+    document.getElementById('warning-table-body').innerHTML = html
   }
 })
