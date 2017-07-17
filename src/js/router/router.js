@@ -5,7 +5,6 @@ define(['router/routes', 'director', 'jquery', 'module/timer'], function (Routes
     before () {
       clearDom()
       timer.clear()
-      hightLightMenuBtn()
     }
   })
 
@@ -13,11 +12,5 @@ define(['router/routes', 'director', 'jquery', 'module/timer'], function (Routes
     $('#router-view').children().remove()
   }
 
-  function hightLightMenuBtn () {
-    let r = window.location.href.match(/#\/(\w)+/g)[0].slice(2)
-    if (-1 === m.indexOf(r)) return
-    $('#menu ul li a').removeClass('active')
-    $('#menu-' + r).attr('class', 'active')
-  }
   return router
 })

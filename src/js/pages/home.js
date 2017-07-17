@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 define([], function () {
-  return function () {
+  return function (param) {
 
   }
 })
