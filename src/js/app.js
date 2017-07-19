@@ -24,6 +24,8 @@ require.config({
 require(['domReady!', 'router/router', 'jquery', 'module/dateformat'], (doc, router, $, dformat) => {
   router.init()
 
+  if (window.location.hash === '') window.location.href = '#/home'
+
   // 日期
   setInterval(() => {
     let d = new Date()
@@ -31,5 +33,4 @@ require(['domReady!', 'router/router', 'jquery', 'module/dateformat'], (doc, rou
     $('input[name="time"]').val(dformat(d, 'hh:mm:ss'))
     $('input[name="day"]').val(dformat(d, 'w'))
   }, 1000)
-
 })

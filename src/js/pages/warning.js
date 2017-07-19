@@ -10,6 +10,38 @@ define(['art-template'], function (template) {
         currentvalue: 120,
         jxz: '界限值',
         desc: '报警描述'
+      },{
+        time: '07-07 06:21:28',
+        objname: 'Data0',
+        type: '上限报警',
+        event: '报警产生',
+        currentvalue: 120,
+        jxz: '界限值',
+        desc: '报警描述'
+      },{
+        time: '07-07 06:21:28',
+        objname: 'Data0',
+        type: '上限报警',
+        event: '报警产生',
+        currentvalue: 120,
+        jxz: '界限值',
+        desc: '报警描述'
+      },{
+        time: '07-07 06:21:28',
+        objname: 'Data0',
+        type: '上限报警',
+        event: '报警产生',
+        currentvalue: 120,
+        jxz: '界限值',
+        desc: '报警描述'
+      },{
+        time: '07-07 06:21:28',
+        objname: 'Data0',
+        type: '上限报警',
+        event: '报警产生',
+        currentvalue: 120,
+        jxz: '界限值',
+        desc: '报警描述'
       }]
     }
 
