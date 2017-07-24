@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="lib/jedate/skin/jedate.css">
+        <link rel="stylesheet" href="lib/layer/skin/default/layer.css">
+        <script src="lib/require.js" data-main="js/app.js"></script>
+        <style>
+            .wicon {
+                background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAQCAYAAADj5tSrAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABZ0RVh0Q3JlYXRpb24gVGltZQAwNi8xNS8xNGnF/oAAAAAcdEVYdFNvZnR3YXJlAEFkb2JlIEZpcmV3b3JrcyBDUzVxteM2AAAAoElEQVQ4jWPceOnNfwYqAz9dYRQ+E7UtwAaGjyUsDAyYYUgJ2HT5LXZLcEmSCnA6duOlN///////H0bDALl8dPH/////Z8FuNW6Qtvw2nL3lyjsGBgYGhlmRqnj1kGwJuqHIlhJlCXq8EOITEsdqCXLEbbr8FisfFkTo+vBZRFZwERNEFFkCiw90nxJtCalxQmzegltCzVyP1RJq5HZ8AABuNZr0628DMwAAAABJRU5ErkJggg==");
+                background-repeat: no-repeat;
+                background-position: right center;
+            }
+            .datainp {
+                width: 200px;
+                height: 30px;
+                border: 1px #A5D2EC solid;
+                padding-left: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="app-head">
+            <h1 class="app-title">葡萄园自动灌溉控制系统</h1>
+            <div class="app-date">
+                <label>日期</label><input name="date" type="text" readonly/> <br/>
+                <label>时间</label><input name="time" type="text" readonly/>
+                <label>星期</label><input name="day" type="text" readonly/>
+            </div>
+        </div>
+        <div class="app-container">
+            <div id="router-view" class="app-router"></div>
+            <div id="menu" class="app-menu">
+                <ul>
+                    <li><a id="menu-home" href="#/home">主画面</a></li>
+                    <li><a id="menu-report" href="#/report">运行记录</a></li>
+                    <li><a id="menu-warning" href="#/warning">报警信息</a></li>
+                    <li><a id="menu-user" href="#/user">用户管理</a></li>
+                    <li><a href="javascript:;">退出系统</a></li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>

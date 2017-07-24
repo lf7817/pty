@@ -1,47 +1,86 @@
 <!DOCTYPE html>
 <html lang="zh-ch">
-    <head>
-        <title></title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="lib/jedate/skin/jedate.css">
-        <link rel="stylesheet" href="lib/layer/skin/default/layer.css">
-        <script src="lib/require.js" data-main="js/app.js"></script>
-        <style>
-            .wicon {
-                background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAQCAYAAADj5tSrAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABZ0RVh0Q3JlYXRpb24gVGltZQAwNi8xNS8xNGnF/oAAAAAcdEVYdFNvZnR3YXJlAEFkb2JlIEZpcmV3b3JrcyBDUzVxteM2AAAAoElEQVQ4jWPceOnNfwYqAz9dYRQ+E7UtwAaGjyUsDAyYYUgJ2HT5LXZLcEmSCnA6duOlN///////H0bDALl8dPH/////Z8FuNW6Qtvw2nL3lyjsGBgYGhlmRqnj1kGwJuqHIlhJlCXq8EOITEsdqCXLEbbr8FisfFkTo+vBZRFZwERNEFFkCiw90nxJtCalxQmzegltCzVyP1RJq5HZ8AABuNZr0628DMwAAAABJRU5ErkJggg==");
-                background-repeat: no-repeat;
-                background-position: right center;
-            }
-            .datainp {
-                width: 200px;
-                height: 30px;
-                border: 1px #A5D2EC solid;
-                padding-left: 10px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="app-head">
-            <h1 class="app-title">葡萄园自动灌溉控制系统</h1>
-            <div class="app-date">
-                <label>日期</label><input name="date" type="text" readonly/> <br/>
-                <label>时间</label><input name="time" type="text" readonly/>
-                <label>星期</label><input name="day" type="text" readonly/>
-            </div>
-        </div>
-        <div class="app-container">
-            <div id="router-view" class="app-router"></div>
-            <div id="menu" class="app-menu">
-                <ul>
-                    <li><a id="menu-home" href="#/home">主画面</a></li>
-                    <li><a id="menu-report" href="#/report">运行记录</a></li>
-                    <li><a id="menu-warning" href="#/warning">报警信息</a></li>
-                    <li><a id="menu-user" href="#/user">用户管理</a></li>
-                    <li><a href="javascript:;">退出系统</a></li>
-                </ul>
-            </div>
-        </div>
-    </body>
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+      (function(w){if(!("WebSocket"in w&&2===w.WebSocket.CLOSING)){var d=document.createElement("div");d.className="browsehappy";d.innerHTML='<div style="width:100%;height:100px;font-size:20px;line-height:100px;text-align:center;background-color:#E90D24;color:#fff;margin-bottom:40px;">\u4f60\u7684\u6d4f\u89c8\u5668\u5b9e\u5728<strong>\u592a\u592a\u65e7\u4e86</strong>\uff0c\u592a\u592a\u65e7\u4e86 <a target="_blank" href="http://browsehappy.osfipin.com/" style="background-color:#31b0d5;border-color: #269abc;text-decoration: none;padding: 6px 12px;background-image: none;border: 1px solid transparent;border-radius: 4px;color:#FFEB3B;">\u7acb\u5373\u5347\u7ea7</a></div>';var f=function(){var s=document.getElementsByTagName("body")[0];if("undefined"==typeof(s)){setTimeout(f,10)}else{s.insertBefore(d,s.firstChild)}};f()}}(window));
+    </script>
+    <style>
+        body {
+            background: url("./images/2.jpg") no-repeat;
+            background-size: cover;
+            overflow: hidden;
+        }
+
+        body,html {
+            width: 100%;
+            height: 100%;
+            min-width: 1200px;
+            min-height: 680px;
+            margin: 0;
+            padding: 0;
+            font-family: '微软雅黑';
+            font-size: 16px;
+        }
+
+        .title {
+            margin: 80px auto 0;
+            width: 500px;
+            letter-spacing: 4px;
+            font-size: 40px;
+        }
+
+        .login-container {
+            margin: 100px auto;
+            width: 300px;
+        }
+
+        .login-container .item {
+            width: 300px;
+            height: 40px;
+            line-height: 38px;
+            text-align: center;
+            border: 2px solid #fff;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+
+        .login-container .item input {
+            width: 280px;
+            height: 30px;
+            line-height:30px;
+            border: none;
+            background: transparent;
+
+        }
+        input:-webkit-autofill, input:focus {
+            outline: none;
+            -webkit-box-shadow: 0 0 0 1000px white inset!important;
+        }
+        button {
+            width: 60px;
+            height: 30px;
+            border-radius: 6px;
+        }
+        button:focus {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="title">葡萄园自动灌溉控制系统</h1>
+    <div class="login-container">
+        <div class="item"><input type="text" placeholder="用户名"></div>
+        <div class="item"><input type="password" placeholder="密码"></div>
+        <button id="loginbtn">登录</button>
+    </div>
+    <script type="text/javascript" src="lib/jquery.min.js"></script>
+    <script>
+        document.getElementById('loginbtn').onclick = function () {
+          window.location.href = 'home.html#/home'
+        }
+    </script>
+</body>
 </html>

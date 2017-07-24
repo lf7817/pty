@@ -5,7 +5,7 @@ import gulp from 'gulp'
 import cached from 'gulp-cached'
 
 gulp.task('move-index', function () {
-  return gulp.src('src/index.html')
+  return gulp.src('src/*.html')
     .pipe(cached('move-index'))
     .pipe(gulp.dest('dist'))
 })

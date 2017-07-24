@@ -23,7 +23,7 @@ gulp.task('server', function () {
   gulp.watch('src/assets/*.*', ['move-assets'])
   gulp.watch('src/lib/**/*.*', ['move-lib'])
   gulp.watch('src/template/*.*', ['move-template'])
-  gulp.watch('src/index.html', ['move-index'])
+  gulp.watch('src/*.html', ['move-index'])
   server.watch('dist/css/**/*.css', function (event, file) {
     if (event === 'change') {
       server.reload(file)
