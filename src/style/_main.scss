@@ -1,0 +1,121 @@
+.app-main {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.app-main .app-animation {
+  position: absolute;
+  top: calc(50% - 262px);
+  width: 100%;
+  height: 525px;
+}
+
+.app-animation .beng {
+  position: absolute;
+  left: 20px;
+  top: 0;
+  width: 284px;
+  height: 525px;
+  background-size: 100% 100%;
+}
+
+.app-animation .beng-on {
+  background: url("../images/beng-working.png") no-repeat;
+}
+
+.app-animation .beng-off {
+  background: url("../images/beng-stoping.png") no-repeat;
+}
+
+
+.app-animation .tb {
+  position: absolute;
+  bottom: 20px;
+  right: 22px;
+  width: 172px;
+  height: 180px;
+  font-size: 14px;
+  border-collapse: collapse;
+  background: #fff;
+}
+
+.app-animation .tb td {
+  text-align: center;
+}
+
+.app-animation .fa {
+  position: absolute;
+  left: 304px;
+  width: 454px;
+  height: 54px;
+}
+
+.app-animation .fa-on {
+  background: url("../images/3.gif") no-repeat;
+  background-size: 100% 100%;
+}
+
+.app-animation .fa-off {
+  background: url("../images/fa-stoping.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+.app-animation .fa .fa-name {
+  position: absolute;
+  top: 4px;
+  left: 30px;
+  color: #eee;
+}
+
+.app-animation .fa .fa-online {
+  position: absolute;
+  left: 6px;
+  top: 4px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #00ff00;
+}
+
+.app-animation .fa .fa-offline {
+  position: absolute;
+  left: 6px;
+  top: 4px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ff0000;
+}
+
+.app-animation .fa1 {
+  top: 1.9047%;
+}
+
+.app-animation .fa2 {
+  top: 14.2587%;
+}
+
+.app-animation .fa3 {
+  top: 26.6667%;
+}
+
+.app-animation .fa4 {
+  top: 39.0476%;
+}
+
+.app-animation .fa5 {
+  top: 51.4285%;
+}
+
+.app-animation .fa6 {
+  top: 63.8095%;
+}
+
+.app-animation .fa7 {
+  top: 76.1904%;
+}
+
+.app-animation .fa8 {
+  top: 88.5714%;
+}
+
