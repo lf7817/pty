@@ -20,7 +20,7 @@ gulp.task('server', function () {
   gulp.watch('src/style/**/*.scss', ['sass'])
   gulp.watch('src/js/**/*.js', ['es6'])
   gulp.watch('src/images/**/*.{jpg,jpeg,png,gif}', ['imgmin'])
-  gulp.watch('src/assets/*.*', ['move-assets'])
+  gulp.watch('src/assets/**/*.*', ['move-assets'])
   gulp.watch('src/lib/**/*.*', ['move-lib'])
   gulp.watch('src/template/*.*', ['move-template'])
   gulp.watch('src/*.html', ['move-index'])

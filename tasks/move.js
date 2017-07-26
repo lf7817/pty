@@ -11,7 +11,7 @@ gulp.task('move-index', function () {
 })
 
 gulp.task('move-assets', function () {
-  return gulp.src('src/assets/*.*')
+  return gulp.src('src/assets/**/*.*')
     .pipe(cached('move-assets'))
     .pipe(gulp.dest('dist/assets'))
 })

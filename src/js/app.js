@@ -1,3 +1,5 @@
+let host = 'http://192.168.1.28:8080/cao/'
+
 require.config({
   urlArgs: 'ver=' + 1024,
   baseUrl: 'lib',
@@ -22,10 +24,15 @@ require.config({
 })
 
 require(['domReady!', 'router/router', 'jquery', 'module/dateformat'], (doc, router, $, dformat) => {
+  getUserDetail().done(data => {
+    if (data.code !== 0) {
+      alert('请重新登录！')
+      window.location.href = '../index.html'
+    }
+  })
+
   router.init()
-
-  if (window.location.hash === '') window.location.href = '#/home'
-
+  if (window.location.hash === '') window.location.href = '#/main'
   // 日期
   setInterval(() => {
     let d = new Date()
@@ -34,3 +41,21 @@ require(['domReady!', 'router/router', 'jquery', 'module/dateformat'], (doc, rou
     $('input[name="day"]').val(dformat(d, 'w'))
   }, 1000)
 })
+
+/**
+ * 获取用户详情信息
+ * @returns {*}
+ */
+function getUserDetail () {
+  return $.ajax({
+    type: 'get',
+    async: false,
+    url: host + 'user/detail',
+    dataType: 'json',
+    crossDomain: true,
+    contentType: 'application/json',
+    xhrFields: {
+      withCredentials: true
+    }
+  })
+}

@@ -72,15 +72,68 @@
 <body>
     <h1 class="title">葡萄园自动灌溉控制系统</h1>
     <div class="login-container">
-        <div class="item"><input type="text" placeholder="用户名"></div>
-        <div class="item"><input type="password" placeholder="密码"></div>
+        <div class="item"><input name="username" type="text" placeholder="用户名"></div>
+        <div class="item"><input name="password" type="password" placeholder="密码"></div>
         <button id="loginbtn">登录</button>
     </div>
     <script type="text/javascript" src="lib/jquery.min.js"></script>
     <script>
-        document.getElementById('loginbtn').onclick = function () {
-          window.location.href = 'home.html#/home'
+      var host = 'http://192.168.1.28:8080/cao/'
+      var encode64 = (function () {
+        // base64加密开始
+        var keyStr = "ABCDEFGHIJKLMNOP" + "QRSTUVWXYZabcdef" + "ghijklmnopqrstuv" +
+            "wxyz0123456789+/" + "=";
+        return function (input) {
+          var output = "";
+          var chr1, chr2, chr3 = "";
+          var enc1, enc2, enc3, enc4 = "";
+          var i = 0;
+          do {
+            chr1 = input.charCodeAt(i++);
+            chr2 = input.charCodeAt(i++);
+            chr3 = input.charCodeAt(i++);
+            enc1 = chr1 >> 2;
+            enc2 = ((chr1 & 3) << 4) | (chr2 >> 4);
+            enc3 = ((chr2 & 15) << 2) | (chr3 >> 6);
+            enc4 = chr3 & 63;
+            if (isNaN(chr2)) {
+              enc3 = enc4 = 64;
+            } else if (isNaN(chr3)) {
+              enc4 = 64;
+            }
+            output = output + keyStr.charAt(enc1) + keyStr.charAt(enc2) +
+              keyStr.charAt(enc3) + keyStr.charAt(enc4);
+            chr1 = chr2 = chr3 = "";
+            enc1 = enc2 = enc3 = enc4 = "";
+          } while (i < input.length);
+
+          return output;
         }
+      })()
+
+
+      function login () {
+        return $.ajax({
+          type: 'post',
+          url: host + 'user/login',
+          dataType: 'json',
+          contentType: 'application/json',
+          crossDomain: true,
+          xhrFields: {
+            withCredentials: true
+          },
+          data: encode64(JSON.stringify({
+            "name": $('input[name="username"]').val(),
+            "passWord": $('input[name="password"]').val()
+          }))
+        })
+      }
+      document.getElementById('loginbtn').onclick = function () {
+        login().done(function (data) {
+          if (data.code === 0) window.location.href = 'home.html#/main'
+          else alert(data.msg)
+        })
+      }
     </script>
 </body>
 </html>

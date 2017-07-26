@@ -1,0 +1,212 @@
+{
+  "code": 0,
+  "msg": "成功！",
+  "param": {
+    "data": [
+      {
+        "orgName": "1号控制中心",
+        "orgId": "00001",
+        "records": [
+          {
+            "ruleName": "变频器状态",
+            "ruleType": "beng",
+            "ruleId": 11001,
+            "ruleCode": "openstate",
+            "lng": "118.672493",
+            "lat": "31.900296",
+            "relation": 11001,
+            "display": 0,
+            "state": "1",
+            "pl": "-1",
+            "yxdl": "-1",
+            "yxdy": "-1",
+            "mxdy": "-1",
+            "pids": "-1",
+            "pidg": "-1",
+            "bpqwd": "-1",
+            "remote": "-1"
+          },
+          {
+            "ruleName": "\t\r\n泵房施肥阀",
+            "ruleType": "swj",
+            "ruleId": 12010,
+            "ruleCode": "openstate",
+            "lng": "118.672493",
+            "lat": "31.900296",
+            "relation": 12010,
+            "display": 0,
+            "state": "-1"
+          }
+        ]
+      },
+      {
+        "orgName": "1#大棚",
+        "orgId": "0000100001",
+        "records": [
+          {
+            "ruleName": "开阀状态",
+            "ruleType": "zha",
+            "ruleId": 1113,
+            "ruleCode": "openstate",
+            "lng": "118.672493",
+            "lat": "31.900296",
+            "relation": 1113,
+            "display": 0,
+            "state": "0",
+            "kqwd": "-1",
+            "kqsd": "-1",
+            "gzd": "-1",
+            "trsf": "-1"
+          }
+        ]
+      },
+      {
+        "orgName": "2#大棚",
+        "orgId": "0000100002",
+        "records": [
+          {
+            "ruleName": "开阀状态",
+            "ruleType": "zha",
+            "ruleId": 2013,
+            "ruleCode": "openstate",
+            "lng": "118.672493",
+            "lat": "31.900296",
+            "relation": 2013,
+            "display": 0,
+            "state": "1",
+            "kqwd": "-1",
+            "kqsd": "-1",
+            "gzd": "-1",
+            "trsf": "-1"
+          }
+        ]
+      },
+      {
+        "orgName": "3#大棚",
+        "orgId": "0000100003",
+        "records": [
+          {
+            "ruleName": "开阀状态",
+            "ruleType": "zha",
+            "ruleId": 3013,
+            "ruleCode": "openstate",
+            "lng": "118.672493",
+            "lat": "31.900296",
+            "relation": 3013,
+            "display": 0,
+            "state": "-1",
+            "kqwd": "-1",
+            "kqsd": "-1",
+            "gzd": "-1",
+            "trsf": "-1"
+          }
+        ]
+      },
+      {
+        "orgName": "4#大棚",
+        "orgId": "0000100004",
+        "records": [
+          {
+            "ruleName": "开阀状态",
+            "ruleType": "zha",
+            "ruleId": 4013,
+            "ruleCode": "openstate",
+            "lng": "118.672493",
+            "lat": "31.900296",
+            "relation": 4013,
+            "display": 0,
+            "state": "1",
+            "kqwd": "-1",
+            "kqsd": "-1",
+            "gzd": "-1",
+            "trsf": "-1"
+          }
+        ]
+      },
+      {
+        "orgName": "5#大棚",
+        "orgId": "0000100005",
+        "records": [
+          {
+            "ruleName": "开阀状态",
+            "ruleType": "zha",
+            "ruleId": 5013,
+            "ruleCode": "openstate",
+            "lng": "118.672493",
+            "lat": "31.900296",
+            "relation": 5013,
+            "display": 0,
+            "state": "0",
+            "trsf": "-1",
+            "kqwd": "-1",
+            "kqsd": "-1",
+            "gzd": "-1"
+          }
+        ]
+      },
+      {
+        "orgName": "6#大棚",
+        "orgId": "0000100006",
+        "records": [
+          {
+            "ruleName": "开阀状态",
+            "ruleType": "zha",
+            "ruleId": 6013,
+            "ruleCode": "openstate",
+            "lng": "118.672493",
+            "lat": "31.900296",
+            "relation": 6013,
+            "display": 0,
+            "state": "1",
+            "trsf": "-1",
+            "kqwd": "-1",
+            "kqsd": "-1",
+            "gzd": "-1"
+          }
+        ]
+      },
+      {
+        "orgName": "7#大棚",
+        "orgId": "0000100007",
+        "records": [
+          {
+            "ruleName": "开阀状态",
+            "ruleType": "zha",
+            "ruleId": 7013,
+            "ruleCode": "openstate",
+            "lng": "118.672493",
+            "lat": "31.900296",
+            "relation": 7013,
+            "display": 0,
+            "state": "0",
+            "trsf": "-1",
+            "gzd": "-1",
+            "kqwd": "-1",
+            "kqsd": "-1"
+          }
+        ]
+      },
+      {
+        "orgName": "8#大棚",
+        "orgId": "0000100008",
+        "records": [
+          {
+            "ruleName": "开阀状态",
+            "ruleType": "zha",
+            "ruleId": 8013,
+            "ruleCode": "openstate",
+            "lng": "118.672493",
+            "lat": "31.900296",
+            "relation": 8013,
+            "display": 0,
+            "state": "1",
+            "trsf": "-1",
+            "kqwd": "-1",
+            "kqsd": "-1",
+            "gzd": "-1"
+          }
+        ]
+      }
+    ]
+  }
+}

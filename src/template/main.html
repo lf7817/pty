@@ -1,0 +1,62 @@
+<script id="tpl-animation" type="text/html">
+    <div class="beng beng-{{if beng.state === '1'}}on{{else}}off{{/if}}">
+        <table border="1" class="tb">
+            <tr>
+                <th>运行频率</th>
+                <td>{{beng.pl}}Hz</td>
+            </tr>
+            <tr>
+                <th>运行电流</th>
+                <td>{{beng.yxdl}}A</td>
+            </tr>
+            <tr>
+                <th>运行电压</th>
+                <td>{{beng.yxdy}}V</td>
+            </tr>
+            <tr>
+                <th>PID设定</th>
+                <td>{{beng.pids}}Mpa</td>
+            </tr>
+            <tr>
+                <th>PID反馈</th>
+                <td>{{beng.pidg}}Mpa</td>
+            </tr>
+            <tr>
+                <th>模块温度</th>
+                <td>{{beng.bpqwd}}℃</td>
+            </tr>
+        </table>
+    </div>
+    {{each fa value i}}
+    {{if value.state === '1'}}
+    <div class="fa fa{{i + 1}} fa-on">
+        <div class="fa-online" title="在线"></div>
+        <span class="fa-name">阀{{i + 1}}</span>
+        <span class="fa-attr trsf"></span>
+    </div>
+    {{else if value.state === '0'}}
+    <div class="fa fa{{i + 1}} fa-off">
+        <div class="fa-online" title="在线"></div>
+        <span class="fa-name">阀{{i + 1}}</span>
+        <span class="fa-attr trsf"></span>
+    </div>
+    {{else if value.state === '-1'}}
+    <div class="fa fa{{i + 1}} fa-off">
+        <div class="fa-offline" title="离线"></div>
+        <span class="fa-name">阀{{i + 1}}</span>
+        <span class="fa-attr trsf"></span>
+    </div>
+    {{/if}}
+    <!--<div class="fa fa{{$index + 1}} fa-off">-->
+        <!--<div class="fa-offline"></div>-->
+        <!--<span class="fa-name">阀{{$index + 1}}</span>-->
+        <!--<span class="fa-attr trsf"></span>-->
+    <!--</div>-->
+    {{/each}}
+</script>
+
+<div class="app-main">
+    <div id="app-animation" class="app-animation">
+
+    </div>
+</div>
