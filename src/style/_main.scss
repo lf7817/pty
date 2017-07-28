@@ -46,18 +46,18 @@
 .app-animation .fa {
   position: absolute;
   left: 304px;
-  width: 454px;
+  width: 580px;
   height: 54px;
 }
 
 .app-animation .fa-on {
-  background: url("../images/3.gif") no-repeat;
-  background-size: 100% 100%;
+  background: url("../images/fa-working.gif") no-repeat;
+  background-size: 454px 54px;
 }
 
 .app-animation .fa-off {
   background: url("../images/fa-stoping.png") no-repeat;
-  background-size: 100% 100%;
+  background-size: 454px 54px;
 }
 
 .app-animation .fa .fa-name {
@@ -67,26 +67,72 @@
   color: #eee;
 }
 
-.app-animation .fa .fa-online {
+.app-animation .fa .fa-working {
   position: absolute;
   left: 6px;
   top: 4px;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: #00ff00;
+  width: 18px;
+  height: 18px;
+  background: url("../images/working.png") no-repeat;
+}
+
+.app-animation .fa .fa-stoping {
+  position: absolute;
+  left: 6px;
+  top: 4px;
+  width: 18px;
+  height: 18px;
+  background: url("../images/stoping.png") no-repeat;
 }
 
 .app-animation .fa .fa-offline {
   position: absolute;
   left: 6px;
   top: 4px;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: #ff0000;
+  width: 18px;
+  height: 18px;
+  background: url("../images/abort.png") no-repeat;
 }
 
+.app-animation .fa .fa-closebtn {
+  position: absolute;
+  right: 0;
+  bottom: 2px;
+  width: 80px;
+  height: 26px;
+  font-size: 12px;
+  color: #000;
+  background: url("../images/btn_hover.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+.app-animation .fa .fa-attr {
+  position: absolute;
+  top: 28px;
+  left: 392px;
+  color: #eee;
+  font-size: 12px;
+}
+.app-animation .fa .trsf {
+   top: 32px;
+   left: 390px;
+ }
+
+.app-animation .fa .kqwd {
+  top: 8px;
+  left: 302px;
+  letter-spacing: 1px;
+}
+
+.app-animation .fa .kqsd {
+  top: 10px;
+  left: 392px;
+}
+
+.app-animation .fa .gzd {
+  top: 10px;
+  left: 480px;
+}
 .app-animation .fa1 {
   top: 1.9047%;
 }
@@ -119,3 +165,47 @@
   top: 88.5714%;
 }
 
+.app-mode {
+  position: absolute;
+  left: calc(392px + 50%);
+  //top: calc(50% - 214px);
+  width: 102px;
+  border-radius: 6px;
+  h2 {
+    margin-bottom: 30px;
+  }
+}
+
+.app-mode a {
+  display: block;
+  box-sizing: border-box;
+  width: 100px;
+  height: 100px;
+  padding-top: 24px;
+  margin-bottom: 30px;
+  text-align: center;
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  background: url("../images/mode-bg.png") no-repeat;
+  background-size: 100% 100%;
+  letter-spacing: 2px;
+  &:hover, &.active {
+    background: url("../images/mode-hover.png") no-repeat;
+    background-size: 100% 100%;
+  }
+  &:nth-child(2) {
+    padding-top: 30px;
+  }
+}
+
+.app-remote-local {
+  position: absolute;
+  left: 20px;
+  top: 10px;
+  button {
+    padding: 10px 20px;
+    font-size: 12px;
+    background: rgb(192, 192, 192);
+  }
+}

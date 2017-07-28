@@ -1,7 +1,7 @@
 let host = 'http://192.168.1.28:8080/cao/'
 
 require.config({
-  urlArgs: 'ver=' + 1024,
+  // urlArgs: 'ver=' + 1024,
   baseUrl: 'lib',
   paths: {
     'jquery': 'jquery.min',
@@ -49,7 +49,7 @@ require(['domReady!', 'router/router', 'jquery', 'module/dateformat'], (doc, rou
 function getUserDetail () {
   return $.ajax({
     type: 'get',
-    async: false,
+    // async: false,
     url: host + 'user/detail',
     dataType: 'json',
     crossDomain: true,

@@ -23,8 +23,26 @@ define(['jquery', 'art-template'], ($, template) => {
       })
     }
 
+    getData (orgId) {
+      return $.ajax({
+        url: host + 'propertyRule/listmachine',
+        // url: '../assets/listmachine.json',
+        type: 'post',
+        dataType: 'json',
+        contentType: 'application/json',
+        data: JSON.stringify({
+          'orgId': orgId
+        }),
+        crossDomain: true,
+        xhrFields: {
+          withCredentials: true
+        }
+      })
+    }
+
     render () {
       let data = {
+        mode: this.mode,
         beng: this.beng,
         sfa: this.sfa,
         fa: this.fa

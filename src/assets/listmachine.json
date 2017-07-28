@@ -2,6 +2,7 @@
   "code": 0,
   "msg": "成功！",
   "param": {
+    "type":"0",
     "data": [
       {
         "orgName": "1号控制中心",
@@ -24,7 +25,7 @@
             "pids": "-1",
             "pidg": "-1",
             "bpqwd": "-1",
-            "remote": "-1"
+            "remote": "1"
           },
           {
             "ruleName": "\t\r\n泵房施肥阀",
@@ -77,7 +78,7 @@
             "kqwd": "-1",
             "kqsd": "-1",
             "gzd": "-1",
-            "trsf": "-1"
+            "trsf": "35"
           }
         ]
       },
@@ -158,10 +159,10 @@
             "relation": 6013,
             "display": 0,
             "state": "1",
-            "trsf": "-1",
-            "kqwd": "-1",
-            "kqsd": "-1",
-            "gzd": "-1"
+            "trsf": "35",
+            "kqwd": "32.3",
+            "kqsd": "60",
+            "gzd": "1000"
           }
         ]
       },
@@ -178,7 +179,7 @@
             "lat": "31.900296",
             "relation": 7013,
             "display": 0,
-            "state": "0",
+            "state": "1",
             "trsf": "-1",
             "gzd": "-1",
             "kqwd": "-1",

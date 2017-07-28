@@ -2,22 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5ab36b16-1196-482a-b56a-a821bfa1727b" name="默认的" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/detail.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/listmachine.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/js/modules/encode64.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/js/modules/pty.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/js/pages/main.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/js/pages/home.js" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/template/home.html" afterPath="$PROJECT_DIR$/src/template/main.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/lib/polyfill.min.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/2557594602.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/283776418.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/3.gif" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/images/beng-stoping.png" afterPath="$PROJECT_DIR$/src/images/beng-stoping.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/images/beng-working.gif" afterPath="$PROJECT_DIR$/src/images/beng-working.gif" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/listmachine.json" afterPath="$PROJECT_DIR$/src/assets/listmachine.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/home.html" afterPath="$PROJECT_DIR$/src/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.html" afterPath="$PROJECT_DIR$/src/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/app.js" afterPath="$PROJECT_DIR$/src/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/router/router.js" afterPath="$PROJECT_DIR$/src/js/router/router.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/router/routes.js" afterPath="$PROJECT_DIR$/src/js/router/routes.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/modules/pty.js" afterPath="$PROJECT_DIR$/src/js/modules/pty.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/pages/main.js" afterPath="$PROJECT_DIR$/src/js/pages/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/style/_main.scss" afterPath="$PROJECT_DIR$/src/style/_main.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tasks/move.js" afterPath="$PROJECT_DIR$/tasks/move.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tasks/server.js" afterPath="$PROJECT_DIR$/tasks/server.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/template/main.html" afterPath="$PROJECT_DIR$/src/template/main.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -37,8 +35,8 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/pages/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="501">
-              <caret line="28" column="30" lean-forward="false" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
+            <state relative-caret-position="270">
+              <caret line="10" column="27" lean-forward="true" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -46,21 +44,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="listmachine.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/assets/listmachine.json">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="83" column="7" lean-forward="true" selection-start-line="83" selection-start-column="7" selection-end-line="83" selection-end-column="7" />
+            <state relative-caret-position="108">
+              <caret line="4" column="10" lean-forward="false" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_main.scss" pinned="false" current-in-tab="true">
+      <file leaf-file-name="listmachine.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/assets/listmachine.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pty.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/js/modules/pty.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="243">
+              <caret line="33" column="24" lean-forward="true" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_main.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/style/_main.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="22" column="45" lean-forward="false" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
+            <state relative-caret-position="163">
+              <caret line="184" column="18" lean-forward="false" selection-start-line="184" selection-start-column="18" selection-end-line="184" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -69,18 +87,8 @@
       <file leaf-file-name="main.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/template/main.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="29" column="13" lean-forward="true" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pty.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/js/modules/pty.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="11" column="28" lean-forward="false" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+            <state relative-caret-position="204">
+              <caret line="61" column="43" lean-forward="false" selection-start-line="61" selection-start-column="43" selection-end-line="61" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -150,22 +158,22 @@
         <option value="$PROJECT_DIR$/src/template/home.html" />
         <option value="$PROJECT_DIR$/src/js/modules/encode64.js" />
         <option value="$PROJECT_DIR$/src/js/pages/home.js" />
-        <option value="$PROJECT_DIR$/src/js/app.js" />
         <option value="$PROJECT_DIR$/src/index.html" />
         <option value="$PROJECT_DIR$/src/js/router/router.js" />
         <option value="$PROJECT_DIR$/src/js/router/routes.js" />
-        <option value="$PROJECT_DIR$/src/home.html" />
         <option value="$PROJECT_DIR$/src/assets/detail.json" />
         <option value="$PROJECT_DIR$/tasks/move.js" />
         <option value="$PROJECT_DIR$/tasks/server.js" />
         <option value="$PROJECT_DIR$/dist/js/pages/main.js" />
         <option value="$PROJECT_DIR$/dist/assets/listmachine.json" />
         <option value="$PROJECT_DIR$/dist/template/main.html" />
-        <option value="$PROJECT_DIR$/src/js/pages/main.js" />
-        <option value="$PROJECT_DIR$/src/js/modules/pty.js" />
+        <option value="$PROJECT_DIR$/src/home.html" />
+        <option value="$PROJECT_DIR$/src/style/_main.scss" />
         <option value="$PROJECT_DIR$/src/template/main.html" />
         <option value="$PROJECT_DIR$/src/assets/listmachine.json" />
-        <option value="$PROJECT_DIR$/src/style/_main.scss" />
+        <option value="$PROJECT_DIR$/src/js/app.js" />
+        <option value="$PROJECT_DIR$/src/js/pages/main.js" />
+        <option value="$PROJECT_DIR$/src/js/modules/pty.js" />
       </list>
     </option>
   </component>
@@ -188,10 +196,10 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1140" />
-    <option name="height" value="968" />
+    <option name="x" value="110" />
+    <option name="y" value="32" />
+    <option name="width" value="1683" />
+    <option name="height" value="1007" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -209,6 +217,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -225,19 +235,19 @@
               <item name="pty" type="b2602c69:ProjectViewProjectNode" />
               <item name="pty" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="style" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="pty" type="b2602c69:ProjectViewProjectNode" />
               <item name="pty" type="462c0819:PsiDirectoryNode" />
-              <item name="tasks" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="layer" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -253,6 +263,9 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\lf\Desktop\workspaces\pty\src\lib" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\lf\Desktop\workspaces\pty\src\style" />
     </key>
@@ -400,7 +413,11 @@
       <workItem from="1500985588420" duration="24000" />
       <workItem from="1501035474918" duration="1639000" />
       <workItem from="1501046863369" duration="11525000" />
-      <workItem from="1501060749712" duration="2568000" />
+      <workItem from="1501060749712" duration="2634000" />
+      <workItem from="1501074598162" duration="2660000" />
+      <workItem from="1501134420275" duration="5725000" />
+      <workItem from="1501159097998" duration="7510000" />
+      <workItem from="1501222814920" duration="3624000" />
     </task>
     <task id="LOCAL-00001" summary="create repo">
       <created>1499876044569</created>
@@ -444,24 +461,31 @@
       <option name="project" value="LOCAL" />
       <updated>1500977891800</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="备份">
+      <created>1501063985094</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1501063985094</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="114491000" />
+    <option name="totallyTimeSpent" value="134076000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18023255" sideWeight="0.4299517" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18023255" sideWeight="0.40978077" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="调试" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280543" sideWeight="0.5021142" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18023255" sideWeight="0.57004833" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20830788" sideWeight="0.5902192" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2975113" sideWeight="0.49788582" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2963801" sideWeight="0.49788582" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280543" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23308958" sideWeight="0.5609453" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -491,7 +515,8 @@
     <MESSAGE value="运行记录" />
     <MESSAGE value="增加登录页面" />
     <MESSAGE value="主画面" />
-    <option name="LAST_COMMIT_MESSAGE" value="主画面" />
+    <MESSAGE value="备份" />
+    <option name="LAST_COMMIT_MESSAGE" value="备份" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -500,27 +525,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/template/setpwd.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="25" lean-forward="true" selection-start-line="0" selection-start-column="25" selection-end-line="0" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/template/user.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="5" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/template/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="45" lean-forward="false" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/js/pages/login.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
@@ -733,27 +737,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="34" column="65" lean-forward="false" selection-start-line="34" selection-start-column="65" selection-end-line="34" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dist/js/modules/pty.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="7" column="25" lean-forward="true" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1161">
-          <caret line="43" column="18" lean-forward="false" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -782,16 +769,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5400">
           <caret line="200" column="22" lean-forward="false" selection-start-line="200" selection-start-column="22" selection-end-line="200" selection-end-column="22" />
-          <folding>
-            <marker date="1501061045487" expanded="true" signature="0:4628" ph="{&quot;code&quot;: 0...}" />
-            <marker date="1501061045487" expanded="true" signature="42:4626" ph="[...]" />
-            <marker date="1501061045487" expanded="true" signature="48:387" ph="{&quot;orgName&quot;: &quot;1号控制中心&quot;...}" />
-            <marker date="1501061045487" expanded="true" signature="118:387" ph="[...]" />
-            <marker date="1501061045487" expanded="true" signature="128:387" ph="{&quot;ruleName&quot;: &quot;变频器状态&quot;...}" />
-            <marker date="1501061045487" expanded="true" signature="4502:4608" ph="{&quot;ruleName&quot;: &quot;开阀状态&quot;...}" />
-            <marker date="1501061045487" expanded="true" signature="4502:4616" ph="[...]" />
-            <marker date="1501061045487" expanded="true" signature="4502:4622" ph="{&quot;orgName&quot;: &quot;8##大棚&quot;...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -799,7 +776,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
           <caret line="44" column="40" lean-forward="false" selection-start-line="44" selection-start-column="40" selection-end-line="44" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -807,14 +783,79 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.babelrc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="1" column="28" lean-forward="true" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/polyfill.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="9" column="40" lean-forward="false" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/listmachine.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/template/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="61" column="43" lean-forward="false" selection-start-line="61" selection-start-column="43" selection-end-line="61" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/style/_main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="184" column="18" lean-forward="false" selection-start-line="184" selection-start-column="18" selection-end-line="184" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="4" column="10" lean-forward="false" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/layer/layer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="1" column="759" lean-forward="true" selection-start-line="1" selection-start-column="759" selection-end-line="1" selection-end-column="759" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1499606504000" expanded="true" signature="3360:3513" ph="..." />
+            <marker date="1499606504000" expanded="true" signature="3781:3824" ph="..." />
+            <marker date="1499606504000" expanded="true" signature="20525:20533" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/pages/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="501">
-          <caret line="28" column="30" lean-forward="false" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
+        <state relative-caret-position="270">
+          <caret line="10" column="27" lean-forward="true" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
@@ -823,32 +864,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/modules/pty.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="11" column="28" lean-forward="false" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/template/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="29" column="13" lean-forward="true" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/listmachine.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="83" column="7" lean-forward="true" selection-start-line="83" selection-start-column="7" selection-end-line="83" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/style/_main.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="22" column="45" lean-forward="false" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
+        <state relative-caret-position="243">
+          <caret line="33" column="24" lean-forward="true" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
           <folding />
         </state>
       </provider>
