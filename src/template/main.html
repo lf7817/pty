@@ -35,7 +35,7 @@
         <span class="fa-attr trsf" title="土壤水分">水分: {{value.trsf}}%</span>
         <span class="fa-attr kqwd">温度/湿度/光照度: {{value.kqwd}}℃/{{value.kqsd}}%/{{value.gzd}}Klux</span>
         {{if mode === '0'}}
-        <button class="fa-closebtn" data-ruleId="{{value.ruleId}}">{{i+1}}号棚关阀</button>
+        <button class="fa-closebtn" data-index="{{i+1}}" data-ruleId="{{value.ruleId}}">{{i+1}}号棚关阀</button>
         {{/if}}
     </div>
     {{else if value.state === '0'}}
@@ -57,15 +57,15 @@
 
     <div class="app-mode">
         <h2>模式选择</h2>
-        <a href="javascript:;" data-mode="0" class="{{if mode === '0'}}active{{/if}}">手动<br/>模式</a>
-        <a href="javascript:;" data-mode="1" class="{{if mode === '1'}}active{{/if}}">时间<br/>控制<br/>模式</a>
-        <a href="javascript:;" data-mode="2" class="{{if mode === '2'}}active{{/if}}">水分<br/>控制<br/>模式</a>
+        <a href="javascript:;" data-mode="0" class="select-mode {{if mode === '0'}}active{{/if}}">手动<br/>模式</a>
+        <a href="javascript:;" data-mode="1" class="select-mode {{if mode === '1'}}active{{/if}}">时间<br/>控制<br/>模式</a>
+        <a href="javascript:;" data-mode="2" class="select-mode {{if mode === '2'}}active{{/if}}">水分<br/>控制<br/>模式</a>
     </div>
     <div class="app-remote-local">
         {{if beng.remote === '1'}}
-        <button data-remote="1" data-ruleId="{{beng.ruleId}}">远程控制</button>
+        <button class="btn-remote" data-remote="1" data-ruleId="{{beng.ruleId}}">远程控制</button>
         {{else if beng.remote === '0'}}
-        <button data-remote="0" data-ruleId="{{beng.ruleId}}">本地控制</button>
+        <button class="btn-remote" data-remote="0" data-ruleId="{{beng.ruleId}}">本地控制</button>
         {{else}}
 
         {{/if}}
@@ -77,3 +77,15 @@
 
     </div>
 </div>
+
+<script id="tpl-mode-sd" type="text/html">
+    <div>1</div>
+</script>
+
+<script id="tpl-mode-time" type="text/html">
+    <div>2</div>
+</script>
+
+<script id="tpl-mode-water" type="text/html">
+    <div>3</div>
+</script>

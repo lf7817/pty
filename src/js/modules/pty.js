@@ -1,4 +1,4 @@
-define(['jquery', 'art-template'], ($, template) => {
+define(['jquery', 'art-template', 'module/encode64'], ($, template, encode64) => {
   class Pty {
     constructor () {
       this.mode = 0;
@@ -25,14 +25,28 @@ define(['jquery', 'art-template'], ($, template) => {
 
     getData (orgId) {
       return $.ajax({
-        url: host + 'propertyRule/listmachine',
-        // url: '../assets/listmachine.json',
-        type: 'post',
+        // url: host + 'propertyRule/listmachine',
+        url: '../assets/listmachine.json',
+        type: 'get',
         dataType: 'json',
         contentType: 'application/json',
         data: JSON.stringify({
           'orgId': orgId
         }),
+        crossDomain: true,
+        xhrFields: {
+          withCredentials: true
+        }
+      })
+    }
+
+    opera (opts) {
+      return $.ajax({
+        url: host + 'bengdata/opera',
+        type: 'post',
+        dataType: 'json',
+        contentType: 'application/json',
+        data: encode64(JSON.stringify(opts)),
         crossDomain: true,
         xhrFields: {
           withCredentials: true

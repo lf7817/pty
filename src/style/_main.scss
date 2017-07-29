@@ -209,3 +209,12 @@
     background: rgb(192, 192, 192);
   }
 }
+
+.layer-mode {
+  width: 529px;
+  height: 390px;
+}
+
+.layer-mode .layui-layer-content {
+  height: calc(100% - 43px);
+}

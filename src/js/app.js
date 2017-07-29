@@ -1,12 +1,13 @@
 let host = 'http://192.168.1.28:8080/cao/'
 
 require.config({
-  // urlArgs: 'ver=' + 1024,
+  urlArgs: 'ver=' + 1024,
   baseUrl: 'lib',
   paths: {
     'jquery': 'jquery.min',
     'art-template': 'template-web',
     'jedate': 'jedate/jquery.jedate.min',
+    'cookie': 'jquery.cookie',
     'layer': 'layer/layer',
     'module': '../js/modules',
     'router': '../js/router',
@@ -24,12 +25,12 @@ require.config({
 })
 
 require(['domReady!', 'router/router', 'jquery', 'module/dateformat'], (doc, router, $, dformat) => {
-  getUserDetail().done(data => {
-    if (data.code !== 0) {
-      alert('请重新登录！')
-      window.location.href = '../index.html'
-    }
-  })
+  // getUserDetail().done(data => {
+  //   if (data.code !== 0) {
+  //     alert('请重新登录！')
+  //     window.location.href = '../index.html'
+  //   }
+  // })
 
   router.init()
   if (window.location.hash === '') window.location.href = '#/main'
