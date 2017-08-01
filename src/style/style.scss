@@ -1,4 +1,4 @@
-@import "normalize";
+//@import "normalize";
 @import "main";
 @import "user";
 @import "waring";
@@ -26,7 +26,7 @@ body,html {
 
 .app-title {
   position: absolute;
-  top: 10px;
+  top: 30px;
   left: calc(50% - 383px);
   color: #00ff00;
   letter-spacing: 3px;
@@ -48,6 +48,7 @@ body,html {
 
 .app-date input {
   height: 34px;
+  line-height: 28px;
   border: 2px solid #fff;
   background: transparent;
   color: #fff;

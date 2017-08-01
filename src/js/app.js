@@ -1,13 +1,14 @@
 let host = 'http://192.168.1.28:8080/cao/'
 
 require.config({
-  urlArgs: 'ver=' + 1024,
+  urlArgs: 'ver=' + 1025,
   baseUrl: 'lib',
   paths: {
     'jquery': 'jquery.min',
     'art-template': 'template-web',
     'jedate': 'jedate/jquery.jedate.min',
     'cookie': 'jquery.cookie',
+    'switch': 'bootstrap-switch/bootstrap-switch.min',
     'layer': 'layer/layer',
     'module': '../js/modules',
     'router': '../js/router',
@@ -20,6 +21,15 @@ require.config({
     },
     'WebVideoCtrl': {
       exports: 'WebVideoCtrl'
+    },
+    'jedate': {
+      deps: ['jquery']
+    },
+    'cookie': {
+      deps: ['jquery']
+    },
+    'switch': {
+      deps: ['jquery']
     }
   }
 })
@@ -34,6 +44,7 @@ require(['domReady!', 'router/router', 'jquery', 'module/dateformat'], (doc, rou
 
   router.init()
   if (window.location.hash === '') window.location.href = '#/main'
+  
   // 日期
   setInterval(() => {
     let d = new Date()

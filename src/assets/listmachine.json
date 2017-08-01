@@ -2,7 +2,7 @@
   "code": 0,
   "msg": "成功！",
   "param": {
-    "type":"0",
+    "type":"",
     "data": [
       {
         "orgName": "1号控制中心",

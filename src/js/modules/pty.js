@@ -9,7 +9,7 @@ define(['jquery', 'art-template', 'module/encode64'], ($, template, encode64) =>
 
     analyse (param) {
       this.fa = []
-      this.mode = param.type
+      this.mode = param.type || ''
       param.data.forEach(item => {
         item.records.forEach(equip => {
           if (equip.ruleType === 'beng') {
@@ -42,7 +42,7 @@ define(['jquery', 'art-template', 'module/encode64'], ($, template, encode64) =>
 
     opera (opts) {
       return $.ajax({
-        url: host + 'bengdata/opera',
+        url: host + 'propertyRule/opera',
         type: 'post',
         dataType: 'json',
         contentType: 'application/json',

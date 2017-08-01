@@ -39,7 +39,7 @@
   background: #fff;
 }
 
-.app-animation .tb td {
+.app-animation .tb td,.app-animation .tb th {
   text-align: center;
 }
 
@@ -171,7 +171,7 @@
   //top: calc(50% - 214px);
   width: 102px;
   border-radius: 6px;
-  h2 {
+  h3 {
     margin-bottom: 30px;
   }
 }
@@ -181,6 +181,7 @@
   box-sizing: border-box;
   width: 100px;
   height: 100px;
+  line-height: 1.2;
   padding-top: 24px;
   margin-bottom: 30px;
   text-align: center;
@@ -210,11 +211,56 @@
   }
 }
 
-.layer-mode {
-  width: 529px;
+.layer-mode-handle{
+  width: 400px!important;
+  height: 380px;
+}
+
+[class^="layer-mode"] .layui-layer-content {
+  height: calc(100% - 43px);
+}
+
+.layer-mode-time {
+  width: 460px!important;
   height: 390px;
 }
 
-.layer-mode .layui-layer-content {
-  height: calc(100% - 43px);
+.layer-mode-auto {
+  width: 610px!important;
+  height: 610px;
+}
+.beng-delay {
+  width: 80px;
+}
+
+.wicon {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAQCAYAAADj5tSrAAAABHNCS…ZwERNEFFkCiw90nxJtCalxQmzegltCzVyP1RJq5HZ8AABuNZr0628DMwAAAABJRU5ErkJggg==);
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+.workinput {
+  width: 240px;
+  line-height: 20px;
+  border: 1px #A5D2EC solid;
+  border-radius: 4px;
+  padding: 5px;
+  background-color: #fff;
+  font-size: 14px;
+}
+
+.mode-handle-input, .mode-time-input, .mode-auto-input {
+  width: 80px;
+  height: 30px;
+  border: 1px #A5D2EC solid;
+  border-radius: 4px;
+  text-indent: 10px;
+}
+.mode-auto-input {
+  width: 100px;
+}
+
+.error {
+  font-size: 10px;
+  color: red;
 }

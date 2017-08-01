@@ -56,10 +56,10 @@
     {{/each}}
 
     <div class="app-mode">
-        <h2>模式选择</h2>
-        <a href="javascript:;" data-mode="0" class="select-mode {{if mode === '0'}}active{{/if}}">手动<br/>模式</a>
-        <a href="javascript:;" data-mode="1" class="select-mode {{if mode === '1'}}active{{/if}}">时间<br/>控制<br/>模式</a>
-        <a href="javascript:;" data-mode="2" class="select-mode {{if mode === '2'}}active{{/if}}">水分<br/>控制<br/>模式</a>
+        <h3>模式选择</h3>
+        <a id="mode-handle" href="javascript:;" data-mode="0" class="select-mode {{if mode === '0'}}active{{/if}}">手动<br/>模式</a>
+        <a id="mode-time" href="javascript:;" data-mode="1" class="select-mode {{if mode === '1'}}active{{/if}}">时间<br/>控制<br/>模式</a>
+        <a id="mode-auto" href="javascript:;" data-mode="2" class="select-mode {{if mode === '2'}}active{{/if}}">水分<br/>控制<br/>模式</a>
     </div>
     <div class="app-remote-local">
         {{if beng.remote === '1'}}
@@ -73,19 +73,117 @@
 </script>
 
 <div class="app-main">
+
     <div id="app-animation" class="app-animation">
 
     </div>
 </div>
 
-<script id="tpl-mode-sd" type="text/html">
-    <div>1</div>
+<script id="tpl-mode-handle" type="text/html">
+    <form id="mode-handle-form">
+        <table class="table table-responsive text-center">
+            {{each falist value i}}
+            {{if i % 2 === 0}}
+            <tr>
+                <td><label for="sw-f{{i+1}}">{{i+1}}号棚</label>&nbsp;&nbsp;&nbsp;&nbsp;<input id="sw-f{{i+1}}" type="checkbox" name="switch" data-size="small"></td>
+                <td><label for="sw-f{{i+2}}">{{i+2}}号棚</label>&nbsp;&nbsp;&nbsp;&nbsp;<input id="sw-f{{i+2}}" type="checkbox" name="switch" data-size="small"></td>
+            </tr>
+            {{/if}}
+            {{/each}}
+            <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr class="text-left" >
+                <td style="text-indent: 10px;">
+                    <label>开泵</label>&nbsp;&nbsp;
+                    <input type="text" name="openbeng" class="mode-handle-input">&nbsp;&nbsp;min
+                </td>
+                <td>
+                    <button id="mode-handle-btn-default" class="btn btn-info">使用默认值</button>
+                </td>
+            </tr>
+            <tr class="text-left">
+                <td style="text-indent: 10px;">
+                    <label>关泵</label>&nbsp;&nbsp;
+                    <input type="text" name="closebeng" class="mode-handle-input">&nbsp;&nbsp;s
+                </td>
+                <td><button id="mode-handle-btn"class="btn btn-info">确认</button></td>
+            </tr>
+        </table>
+    </form>
 </script>
 
 <script id="tpl-mode-time" type="text/html">
-    <div>2</div>
+    <form id="mode-time-form">
+        <table class="table table-responsive text-left">
+            <tr>
+                <td colspan="2">
+                    <label>开始时间</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input id='start-time' name="startTime" type="text" class="workinput wicon" readonly>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>开泵延时</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" name="startDelay" class="mode-time-input">&nbsp;&nbsp;min
+                </td>
+                <td>
+                    <label>关泵延时</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" name="stopDelay" class="mode-time-input">&nbsp;&nbsp;s
+                </td>
+            </tr>
+            {{each falist value i}}
+            {{if i % 2 === 0}}
+            <tr>
+                <td>
+                    <label>{{i+1}}号棚</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" name="ggsc" class="mode-time-input">&nbsp;&nbsp;min
+                </td>
+                <td>
+                    <label>{{i+2}}号棚</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" name="ggsc" class="mode-time-input">&nbsp;&nbsp;min
+                </td>
+            </tr>
+            {{/if}}
+            {{/each}}
+            <tr class="text-right">
+                <td colspan="2">
+                    <button id="mode-time-btn-default" class="btn btn-info">使用默认值</button>
+                    <button id="mode-time-btn" class="btn btn-info">确定</button>
+                </td>
+            </tr>
+        </table>
+    </form>
 </script>
 
-<script id="tpl-mode-water" type="text/html">
-    <div>3</div>
+<script id="tpl-mode-auto" type="text/html">
+    <form id="mode-auto-form">
+        <table class="table table-responsive text-left">
+            <tr>
+                <th>&nbsp;</th>
+                <th>水分下限</th>
+                <th>灌溉时间</th>
+            </tr>
+            {{each falist value i}}
+            <tr>
+                <th class="text-center">{{i+1}}号棚</th>
+                <td><input type="text" name="sd" class="mode-auto-input">&nbsp;&nbsp;%</td>
+                <td><input type="text" name="ggsc" class="mode-auto-input">&nbsp;&nbsp;min</td>
+            </tr>
+            {{/each}}
+            <tr>
+                <th class="text-center">开泵时间</th>
+                <td><input type="text" name="openbeng" class="mode-auto-input">&nbsp;&nbsp;min</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <th class="text-center">关泵时间</th>
+                <td><input type="text" name="closebeng" class="mode-auto-input">&nbsp;&nbsp;s</td>
+                <td><button id="mode-auto-btn-default"class="btn btn-info">使用默认值</button></td>
+            </tr>
+            <tr>
+                <th class="text-center">时间设定</th>
+                <td><input type="text" name="setTime" class="mode-auto-input">&nbsp;&nbsp;h</td>
+                <td><button id="mode-auto-btn" class="btn btn-info">确定</button></td>
+            </tr>
+        </table>
+    </form>
 </script>
