@@ -54,6 +54,42 @@ define(['jquery', 'art-template', 'module/encode64'], ($, template, encode64) =>
       })
     }
 
+    isOperaSuccess (ruleId, sId) {
+      return $.ajax({
+        type: "POST",
+        url: host + "propertyRule/checkCmd",
+        contentType: "application/json",
+        dataType: "json",
+        data: JSON.stringify({
+          "ruleId": ruleId,
+          "sId": sId
+        }),
+        timeout: 10000,
+        crossDomain: true,
+        xhrFields: {
+          withCredentials: true
+        },
+        dataFilter: function (data) {
+          var dat = JSON.parse(data);
+          return JSON.stringify(dat.param.endCmd);
+        }
+      });
+    }
+
+    setMode (opts) {
+      return $.ajax({
+        url: host + 'propertyRule/operaType',
+        type: 'post',
+        dataType: 'json',
+        contentType: 'application/json',
+        data: encode64(JSON.stringify(opts)),
+        crossDomain: true,
+        xhrFields: {
+          withCredentials: true
+        }
+      })
+    }
+
     render () {
       let data = {
         mode: this.mode,

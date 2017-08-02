@@ -13,15 +13,38 @@ define(['jquery', 'art-template',
 
   function confirm (msg, ruleId, opera) {
     layer.confirm(msg, {
-      btn: ['确定','取消'] //按钮
-    }, function(){
-      pty.opera({
-        ruleId: ruleId,
-        opera: opera,
-        cookie: ''
-      })
-      layer.close(layer.index)
-    });
+      btn: ['确定', '取消'] //按钮
+    }, function () {
+      oHandle(ruleId, opera)
+    })
+  }
+
+  function oHandle (ruleId, opera) {
+    let counter = 0
+    pty.opera({
+      ruleId: ruleId,
+      opera: opera,
+      cookie: cookie
+    }).then(data => {
+      sId = data.param.sId
+      checkCmd(ruleId, counter, sId)
+    })
+    layer.close(layer.index)
+  }
+
+  function checkCmd (ruleId, counter, sId) {
+    pty.isOperaSuccess(ruleId, sId).done(endCmd => {
+      if (endCmd == 1) {
+        layer.msg('操作成功！')
+      } else if (endCmd == 2) {
+        layer.msg('操作失败！')
+      } else if (endCmd == 0) {
+        layer.msg('请稍等！命令下发中')
+        timer.add(setTimeout(() => {
+          if (counter ++ < 10) checkCmd (ruleId, counter, sId)
+        }, 2000), 'timeout')
+      }
+    })
   }
 
   // 时间模式验证输入
@@ -174,6 +197,7 @@ define(['jquery', 'art-template',
       item.value = 30
     })
   }
+
   return param => {
     render()
     timer.add(setInterval(render, 6000), 'interval')
@@ -225,7 +249,17 @@ define(['jquery', 'art-template',
             layer.msg(errObj.errorMsg)
             errObj.dom.style.border = "1px solid red"
           } else { // 输入验证通过
-            // TODO: 下发命令
+            let start = $('input[name="openbeng"]').val() * 60
+            let end = $('input[name="closebeng"]').val() * 1
+            let rule = [];
+            let type = 'handle'
+            $('input[name=switch]').each(function (index, item) {
+              if ($(item).bootstrapSwitch('state') === true ) {
+                rule.push(index)
+              }
+            })
+            rule = rule.join(',')
+            pty.setMode({type, cookie,start, end, rule})
           }
           e.preventDefault()
         })
@@ -263,11 +297,24 @@ define(['jquery', 'art-template',
             layer.msg(errObj.errorMsg)
             errObj.dom.style.border = "1px solid red"
           } else { // 输入验证通过
-            // TODO: 下发命令
+            let type = "time"
+            let start = $('input[name="startDelay"]').val() * 60
+            let end = $('input[name="stopDelay"]').val() * 1
+            let ruletime = []
+            let timeArr = $('#start-time').val().split(':')
+            let time = {
+              h: parseInt(timeArr[0]),
+              m: parseInt(timeArr[1]),
+              s: parseInt(timeArr[2])
+            }
+            $('input[name="ggsc"]').each(function (index, item) {
+              ruletime.push(item.value)
+            })
+            ruletime = ruletime.join(',')
+            pty.setMode({type, cookie, time, start, end, ruletime})
           }
           e.preventDefault()
         })
-
         // 填充默认值
         $('#mode-time-btn-default').on('click', setTimeModeDefault)
 
@@ -301,9 +348,22 @@ define(['jquery', 'art-template',
             layer.msg(errObj.errorMsg)
             errObj.dom.style.border = "1px solid red"
           } else { // 输入验证通过
-            // TODO: 下发命令
+            let type = 'auto'
+            let start = $('input[name="openbeng"]').val() * 60
+            let end = $('input[name="closebeng"]').val() * 1
+            let loop = $('input[name="setTime"]').val() * 1
+            let ruletime = []
+            let rules = []
+            $('input[name="ggsc"]').each(function (index, item) {
+              ruletime.push($(this).val() * 60)
+            })
+            ruletime = ruletime.join(',')
+            $('input[name="sd"]').each(function (index, item) {
+              rules.push($(this).val())
+            })
+            rules = rules.join(',')
+            pty.setMode({type, cookie, start, end, loop, rules, ruletime})
           }
-
         })
 
         // 填充默认值

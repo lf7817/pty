@@ -1,5 +1,5 @@
 define(() =>{
-  let m = ['main', 'user', 'warning', 'report']
+  let m = ['main', 'user', 'warning', 'report', 'video']
   let loadPage = (name) => {
     return (param) => {
       hightLightMenuBtn(name)
@@ -22,7 +22,8 @@ define(() =>{
     '/report': loadPage('report'),
     '/warning': loadPage('warning'),
     '/login': loadPage('login'),
-    '/setpwd': loadPage('setpwd')
+    '/setpwd': loadPage('setpwd'),
+    '/video': loadPage('video')
   }
 })
 
