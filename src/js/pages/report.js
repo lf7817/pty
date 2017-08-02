@@ -1,16 +1,23 @@
 /* eslint-disable no-undef */
-define(['jquery', 'jedate'], function ($) {
+define(['jquery', 'bootstrap', 'jedate'], function ($) {
 
   return function () {
-    $("#date-fa").jeDate({
-      format:"YYYY-MM-DD",
-      isTime:false,
-      minDate:"2014-09-19 00:00:00"
+    $('#myTabs a').click(function (e) {
+      e.preventDefault()
+      $(this).tab('show')
     })
-    $("#date-bpq").jeDate({
-      format:"YYYY-MM-DD",
-      isTime:false,
-      minDate:"2014-09-19 00:00:00"
+
+    $('input[name="start-time"]').jeDate({
+      format:'YYYY-MM-DD',
+      isinitVal:true,
+      initAddVal:{MM:"-1"},   //初始化日期加3个月
+      zIndex: 9999999999999999
+    })
+
+    $('input[name="stop-time"]').jeDate({
+      format:'YYYY-MM-DD',
+      isinitVal:true,
+      zIndex: 9999999999999999
     })
   }
 })

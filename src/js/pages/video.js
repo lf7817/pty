@@ -404,7 +404,7 @@ define(['jquery'], ($) => {
   function calcVideoContainerWeight () {
     if (document.getElementById('video-plugin')) {
       let videoWidth = $('#video-plugin').height()
-      $('#video-plugin').css('width', videoWidth * 16 / 9)
+      $('#video-plugin').css('width', videoWidth * 16 / 11)
     }
   }
 

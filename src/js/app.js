@@ -6,6 +6,7 @@ require.config({
   baseUrl: 'lib',
   paths: {
     'jquery': 'jquery.min',
+    'bootstrap': 'bootstrap/js/bootstrap.min',
     'art-template': 'template-web',
     'jedate': 'jedate/jquery.jedate.min',
     'cookie': 'jquery.cookie',
@@ -20,7 +21,7 @@ require.config({
     'director': {
       exports: 'Router'
     },
-    'jedate': {
+    'bootstrap': {
       deps: ['jquery']
     },
     'cookie': {
@@ -38,8 +39,11 @@ require(['domReady!', 'router/router', 'jquery', 'module/dateformat', 'cookie'],
       alert('请重新登录！')
       window.location.href = '../index.html'
     }
+    cookie = $.cookie()
+    console.log(cookie)
   })
-  cookie = $.cookie('coconinfo')
+
+
   router.init()
   if (window.location.hash === '') window.location.href = '#/main'
   

@@ -1,5 +1,21 @@
 <div class="app-report">
-    <div class="tab-menu">
-        <input type="text" id="date-fa">
+    <div class="time-select">
+        <input type="text" name="start-time" class="form-control" placeholder="起始日期" readonly>
+        <input type="text" name="stop-time" class="form-control" placeholder="截止日期" readonly>
+        <button class="btn btn-danger">查询</button>
+    </div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#fa" aria-controls="fa" role="tab" data-toggle="tab">开关阀</a></li>
+        <li role="presentation"><a href="#bpq" aria-controls="profile" role="tab" data-toggle="tab">变频器</a></li>
+        <li role="presentation"><a href="#water" aria-controls="water" role="tab" data-toggle="tab">土壤水分</a></li>
+    </ul>
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade in active" id="fa">1</div>
+        <div role="tabpanel" class="tab-pane fade" id="bpq">2</div>
+        <div role="tabpanel" class="tab-pane fade" id="water">3</div>
     </div>
 </div>
+
+<script type="text/html">
+
+</script>

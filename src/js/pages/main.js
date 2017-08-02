@@ -103,7 +103,7 @@ define(['jquery', 'art-template',
       strategy: 'isNumber',
       errorMsg: '请输入数字'
     },{
-      strategy: 'minValue:3:分钟',
+      strategy: 'minValue:1:分钟',
       errorMsg: '不能小于'
     }])
 
@@ -213,6 +213,9 @@ define(['jquery', 'art-template',
       }
     })
 
+    $('#app-animation').on('click', '#jjtz', function () {
+      confirm('是否紧急停止？', null, 'stop')
+    })
     // 关阀
     $('#app-animation').on('click', '.fa-closebtn', function () {
       let ruleId = $(this).attr('data-ruleId')
@@ -223,13 +226,13 @@ define(['jquery', 'art-template',
     // 手动模式
     $('#app-animation').on('click', '#mode-handle', function () {
       let oldMode = pty.mode
-      if (oldMode === '0') {
+      if (oldMode === '1') {
         layer.msg('当前已处在手动模式')
-      } else if (oldMode === '1') {
+      } else if (oldMode === 'time') {
         layer.alert('请先停止时间控制模式！')
-      } else if (oldMode === '2') {
+      } else if (oldMode === 'auto') {
         layer.alert('请先停止水分控制模式！')
-      } else if (oldMode === '') {
+      } else if (oldMode === '' || oldMode === 'handle') {
         layer.open({
           type: 1,
           title: '手动模式设置',
@@ -270,9 +273,9 @@ define(['jquery', 'art-template',
     // 时间模式
     $('#app-animation').on('click', '#mode-time', function () {
       let oldMode = pty.mode
-      if (oldMode === '1') {
+      if (oldMode === 'time') {
         layer.msg('当前已处在时间控制模式')
-      } else if (oldMode === '' || oldMode === '0') {
+      } else if (oldMode === '' || oldMode === 'handle') {
         layer.open({
           type: 1,
           title: '时间控制模式设置',
@@ -326,9 +329,9 @@ define(['jquery', 'art-template',
     // 水分模式
     $('#app-animation').on('click', '#mode-auto', function () {
       let oldMode = pty.mode
-      if (oldMode === '2') {
+      if (oldMode === 'auto') {
         layer.msg('当前已处在水分控制模式')
-      } else if (oldMode === '' || oldMode === '0') {
+      } else if (oldMode === '' || oldMode === 'hanle') {
         layer.open({
           type: 1,
           title: '水分控制模式设置',

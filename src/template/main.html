@@ -33,8 +33,10 @@
         <div class="fa-working" title="阀{{i + 1}}开启"></div>
         <span class="fa-name">阀{{i + 1}}</span>
         <span class="fa-attr trsf" title="土壤水分">水分: {{value.trsf}}%</span>
-        <span class="fa-attr kqwd">温度/湿度/光照度: {{value.kqwd}}℃/{{value.kqsd}}%/{{value.gzd}}Klux</span>
-        {{if mode === '0'}}
+        <span class="fa-attr kqwd">温度:{{value.kqwd}}℃</span>
+        <span class="fa-attr kqsd">湿度:{{value.kqsd}}%</span>
+        <span class="fa-attr gzd">光照度:{{value.gzd}}klux</span>
+        {{if mode === 'handle'}}
         <button class="fa-closebtn" data-index="{{i+1}}" data-ruleId="{{value.ruleId}}">{{i+1}}号棚关阀</button>
         {{/if}}
     </div>
@@ -43,23 +45,28 @@
         <div class="fa-stoping" title="阀{{i + 1}}关闭"></div>
         <span class="fa-name">阀{{i + 1}}</span>
         <span class="fa-attr trsf" title="土壤水分">水分: {{value.trsf}}%</span>
-        <span class="fa-attr kqwd">温度/湿度/光照度: {{value.kqwd}}℃/{{value.kqsd}}%/{{value.gzd}}Klux</span>
+        <span class="fa-attr kqwd">温度:{{value.kqwd}}℃</span>
+        <span class="fa-attr kqsd">湿度:{{value.kqsd}}%</span>
+        <span class="fa-attr gzd">光照度:{{value.gzd}}klux</span>
     </div>
     {{else if value.state === '-1'}}
     <div class="fa fa{{i + 1}} fa-off">
         <div class="fa-offline" title="阀{{i + 1}}离线"></div>
         <span class="fa-name">阀{{i + 1}}</span>
         <span class="fa-attr trsf" title="土壤水分">水分: {{value.trsf}}%</span>
-        <span class="fa-attr kqwd">温度/湿度/光照度: {{value.kqwd}}℃/{{value.kqsd}}%/{{value.gzd}}Klux</span>
+        <span class="fa-attr kqwd">温度:{{value.kqwd}}℃</span>
+        <span class="fa-attr kqsd">湿度:{{value.kqsd}}%</span>
+        <span class="fa-attr gzd">光照度:{{value.gzd}}klux</span>
     </div>
     {{/if}}
     {{/each}}
 
     <div class="app-mode">
         <h3>模式选择</h3>
-        <a id="mode-handle" href="javascript:;" data-mode="0" class="select-mode {{if mode === '0'}}active{{/if}}">手动<br/>模式</a>
-        <a id="mode-time" href="javascript:;" data-mode="1" class="select-mode {{if mode === '1'}}active{{/if}}">时间<br/>控制<br/>模式</a>
-        <a id="mode-auto" href="javascript:;" data-mode="2" class="select-mode {{if mode === '2'}}active{{/if}}">水分<br/>控制<br/>模式</a>
+        <a id="mode-handle" href="javascript:;" data-mode="handle" class="select-mode {{if mode === 'handle'}}active{{/if}}">手动<br/>模式</a>
+        <a id="mode-time" href="javascript:;" data-mode="time" class="select-mode {{if mode === 'time'}}active{{/if}}">时间<br/>控制<br/>模式</a>
+        <a id="mode-auto" href="javascript:;" data-mode="auto" class="select-mode {{if mode === 'auto'}}active{{/if}}">水分<br/>控制<br/>模式</a>
+        <button id="jjtz">紧急停止</button>
     </div>
     <div class="app-remote-local">
         {{if beng.remote === '1'}}
