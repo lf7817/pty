@@ -1,11 +1,43 @@
 <div class="app-video">
     <div id="video-plugin" class="video-plugin"></div>
     <div class="video-control">
-        <select id="">
-            <option value="192.168.2.101">1号棚</option>
-            <option value="192.168.2.102">2号棚</option>
-            <option value="192.168.2.103">3号棚</option>
-        </select>
-        <div>122</div>
+        <h3>通道选择</h3>
+        <select id="channels"></select>
+        <button id="video-play" class="btn btn-default">播放</button>
+        <button id="video-stop" class="btn btn-danger">停止</button>
+
+        <h3 style="margin-top: 60px;">云台控制</h3>
+        <div class="yuntai">
+            <div>
+                <button data-ptz="5" class="btn btn-default">左上</button>
+                <button data-ptz="1" class="btn btn-default">上</button>
+                <button data-ptz="7" class="btn btn-default">右上</button>
+            </div>
+            <div>
+                <button data-ptz="3" class="btn btn-default">左</button>
+                <button data-ptz="9" class="btn btn-default">自动</button>
+                <button data-ptz="4" class="btn btn-default">右</button>
+            </div>
+            <div>
+                <button data-ptz="6" class="btn btn-default">左下</button>
+                <button data-ptz="2" class="btn btn-default">下</button>
+                <button data-ptz="8" class="btn btn-default">右下</button>
+            </div>
+            <br>
+            <div>
+                <div>
+                    <button data-zoom="in" class="btn btn-default">变倍+</button>
+                    <button data-zoom="out" class="btn btn-default">变倍-</button>
+                </div>
+                <div>
+                    <button data-focus="in" class="btn btn-default">聚焦+</button>
+                    <button data-focus="out" class="btn btn-default">聚焦-</button>
+                </div>
+                <div>
+                    <button data-Iris="in" class="btn btn-default">光圈+</button>
+                    <button data-Iris="out" class="btn btn-default">光圈-</button>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

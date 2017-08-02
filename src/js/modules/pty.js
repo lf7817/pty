@@ -25,9 +25,9 @@ define(['jquery', 'art-template', 'module/encode64'], ($, template, encode64) =>
 
     getData (orgId) {
       return $.ajax({
-        // url: host + 'propertyRule/listmachine',
-        url: '../assets/listmachine.json',
-        type: 'get',
+        url: host + 'propertyRule/listmachine',
+        // url: '../assets/listmachine.json',
+        type: 'post',
         dataType: 'json',
         contentType: 'application/json',
         data: JSON.stringify({

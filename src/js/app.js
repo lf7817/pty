@@ -1,4 +1,4 @@
-let host = 'http://192.168.1.28:8080/cao/'
+let host = 'http://192.168.2.117:8080/cao/'
 let cookie = ''
 
 require.config({
@@ -20,9 +20,6 @@ require.config({
     'director': {
       exports: 'Router'
     },
-    'WebVideoCtrl': {
-      exports: 'WebVideoCtrl'
-    },
     'jedate': {
       deps: ['jquery']
     },
@@ -36,12 +33,12 @@ require.config({
 })
 
 require(['domReady!', 'router/router', 'jquery', 'module/dateformat', 'cookie'], (doc, router, $, dformat, cookie) => {
-  // getUserDetail().done(data => {
-  //   if (data.code !== 0) {
-  //     alert('请重新登录！')
-  //     window.location.href = '../index.html'
-  //   }
-  // })
+  getUserDetail().done(data => {
+    if (data.code !== 0) {
+      alert('请重新登录！')
+      window.location.href = '../index.html'
+    }
+  })
   cookie = $.cookie('coconinfo')
   router.init()
   if (window.location.hash === '') window.location.href = '#/main'

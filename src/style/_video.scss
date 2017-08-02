@@ -24,6 +24,27 @@
   position: absolute;
   right: 0;
   top: 50px;
-  width: 200px;
+  width: 186px;
   //background: red;
+}
+
+.app-video .video-control h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.app-video .video-control select {
+  width: 160px;
+}
+
+#video-play, #video-stop {
+  margin-top: 30px;
+}
+.yuntai button {
+  width: 50px;
+  padding: 0;
+  height: 30px;
+  line-height: 30px !important;
+  margin-bottom: 6px;
+  font-size: 13px;
 }
