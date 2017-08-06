@@ -1,57 +1,30 @@
 <script id="tpl-warning" type="text/html" >
     {{each list}}
     <tr>
-        <td>{{$value.time}}</td>
-        <td>{{$value.objname}}</td>
-        <td>{{$value.type}}</td>
-        <td>{{$value.event}}</td>
-        <td>{{$value.currentvalue}}</td>
-        <td>{{$value.jxz}}</td>
-        <td>{{$value.desc}}</td>
+        <td>{{$value.createAt | dateFormat 'yyyy-MM-dd hh:mm:ss'}}</td>
+        <td>{{$value.orgName}}</td>
+        <td>{{$value.errorName}}</td>
     </tr>
     {{/each}}
 </script>
 <div class="app-warning">
-    <table>
-        <thead>
+    <div class="time-select">
+        <input type="text" name="start-time" class="form-control" placeholder="起始日期" readonly>
+        <input type="text" name="stop-time" class="form-control" placeholder="截止日期" readonly>
+        <button class="btn btn-danger" id="warning-search">查询</button>
+    </div>
+    <div class="content">
+        <table class="table table-hover table-bordered table-striped text-center">
+            <thead>
             <tr>
-                <th><span>时间</span></th>
-                <th><span>对象名</span></th>
-                <th><span>报警类型</span></th>
-                <th><span>报警事件</span></th>
-                <th><span>当前值</span></th>
-                <th><span>界限值</span></th>
-                <th><span>报警描述</span></th>
+                <th class="text-center"><span>时间</span></th>
+                <th class="text-center"><span>对象名</span></th>
+                <th class="text-center"><span>报警事件</span></th>
             </tr>
-        </thead>
-        <tbody id="warning-table-body">
-            <tr>
-                <td>07-07 06:31:28</td>
-                <td>Data0</td>
-                <td>上限报警</td>
-                <td>报警产生</td>
-                <td>120.0</td>
-                <td>100.0</td>
-                <td>Data0上限报警</td>
-            </tr>
-            <tr>
-                <td>07-07 06:31:28</td>
-                <td>Data0</td>
-                <td>上限报警</td>
-                <td>报警产生</td>
-                <td>120.0</td>
-                <td>100.0</td>
-                <td>Data0上限报警</td>
-            </tr>
-            <tr>
-                <td>07-07 06:31:28</td>
-                <td>Data0</td>
-                <td>上限报警</td>
-                <td>报警产生</td>
-                <td>120.0</td>
-                <td>100.0</td>
-                <td>Data0上限报警</td>
-            </tr>
-        </tbody>
-    </table>
+            </thead>
+            <tbody id="warning-table-body">
+
+            </tbody>
+        </table>
+    </div>
 </div>

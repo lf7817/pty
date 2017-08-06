@@ -19,6 +19,15 @@ define(() => {
       }
       return null
     },
+    minLength: function( value, length, errorMsg ){ // 限制最小长度
+      if ( value.length < length ){
+        return {
+          errorMsg: errorMsg,
+          dom: this
+        }
+      }
+      return null
+    },
     minValue: function (value, minValue, unit, errorMsg) {
       if (parseInt(value) < parseInt(minValue)) {
         return {

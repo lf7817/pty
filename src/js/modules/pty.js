@@ -1,7 +1,8 @@
 define(['jquery', 'art-template', 'module/encode64'], ($, template, encode64) => {
   class Pty {
     constructor () {
-      this.mode = 0;
+      this.quick = false
+      this.mode = 0
       this.beng = {} // 泵
       this.sfa = {} // 施肥阀
       this.fa = [] // 电磁阀
@@ -10,6 +11,7 @@ define(['jquery', 'art-template', 'module/encode64'], ($, template, encode64) =>
     analyse (param) {
       this.fa = []
       this.mode = param.type || ''
+      this.quick = param.quick
       param.data.forEach(item => {
         item.records.forEach(equip => {
           if (equip.ruleType === 'beng') {

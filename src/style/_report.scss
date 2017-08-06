@@ -33,3 +33,23 @@
   background-repeat: no-repeat;
   background-position: right center;
 }
+.tab-content {
+  width: 100%;
+  height: calc(100% - 44.4px);
+  //background: red;
+}
+
+.tab-pane {
+  height: calc(100% - 60px);
+  background: rgba( 255, 255, 255, 1);
+}
+
+.report-page {
+  margin-top: 20px;
+  //background: rgba(255, 255, 255, 0.9);
+}
+
+.nav-tabs a {
+  background: #428bca;
+  color: #fff;
+}

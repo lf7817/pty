@@ -12,6 +12,7 @@ require.config({
     'cookie': 'jquery.cookie',
     'switch': 'bootstrap-switch/bootstrap-switch.min',
     'layer': 'layer/layer',
+    'laypage': 'laypage/laypage',
     'module': '../js/modules',
     'router': '../js/router',
     'page': '../js/pages',
@@ -40,7 +41,6 @@ require(['domReady!', 'router/router', 'jquery', 'module/dateformat', 'cookie'],
       window.location.href = '../index.html'
     }
     cookie = $.cookie()
-    console.log(cookie)
   })
 
 

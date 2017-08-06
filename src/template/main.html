@@ -66,16 +66,20 @@
         <a id="mode-handle" href="javascript:;" data-mode="handle" class="select-mode {{if mode === 'handle'}}active{{/if}}">手动<br/>模式</a>
         <a id="mode-time" href="javascript:;" data-mode="time" class="select-mode {{if mode === 'time'}}active{{/if}}">时间<br/>控制<br/>模式</a>
         <a id="mode-auto" href="javascript:;" data-mode="auto" class="select-mode {{if mode === 'auto'}}active{{/if}}">水分<br/>控制<br/>模式</a>
-        <button id="jjtz">紧急停止</button>
+        <button id="jjtz" class="btn btn-danger emergency-stop">紧急<br/>停止</button>
     </div>
     <div class="app-remote-local">
         {{if beng.remote === '1'}}
-        <button class="btn-remote" data-remote="1" data-ruleId="{{beng.ruleId}}">远程控制</button>
+        <button class="btn-remote" data-remote="1" data-ruleId="{{beng.ruleId}}" title="点击切换到本地控制">远程控制</button>
         {{else if beng.remote === '0'}}
-        <button class="btn-remote" data-remote="0" data-ruleId="{{beng.ruleId}}">本地控制</button>
+        <button class="btn-remote" data-remote="0" data-ruleId="{{beng.ruleId}}" title="点击切换到远程控制">本地控制</button>
         {{else}}
 
         {{/if}}
+    </div>
+    <div class="app-sfa">
+        <button class="btn btn-default" data-ruleId="{{sfa.ruleId}}" data-opera="open" title="点击打开施肥阀">开</button>
+        <button class="btn btn-danger" data-ruleId="{{sfa.ruleId}}" data-opera="close" title="点击关闭施肥阀">关</button>
     </div>
 </script>
 

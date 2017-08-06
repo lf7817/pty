@@ -1,13 +1,23 @@
 /* eslint-disable no-undef */
-define(['jquery', 'art-template',
-  'layer', 'module/timer', 'module/pty', 'module/Validator',
-  'switch', 'cookie', 'jedate'], function ($, template, layer, timer, Pty, Validator, sw, jedate) {
+define(['jquery', 'art-template','layer', 'module/timer',
+  'module/pty', 'module/Validator', 'switch', 'cookie', 'jedate'],
+  function ($, template, layer, timer, Pty, Validator, sw, jedate) {
+  let layerIndex = null
   let pty = new Pty()
 
   let render = () => {
     return pty.getData(null).done(data => {
       pty.analyse(data.param)
       pty.render()
+      if (pty.quick === true) {
+        layerIndex = layer.msg('紧急停止中...', {
+          icon: 16
+          ,shade: 0.5
+          ,time: 0
+        })
+      } else {
+        layer.close(layerIndex)
+      }
     })
   }
 
@@ -26,8 +36,11 @@ define(['jquery', 'art-template',
       opera: opera,
       cookie: cookie
     }).then(data => {
-      sId = data.param.sId
-      checkCmd(ruleId, counter, sId)
+      render()
+      if (data.code == 0 && data.param.sId) {
+        let sId = data.param.sId
+        // checkCmd(ruleId, counter, sId)
+      }
     })
     layer.close(layer.index)
   }
@@ -61,7 +74,7 @@ define(['jquery', 'art-template',
       strategy: 'isNumber',
       errorMsg: '请输入数字'
     },{
-      strategy: 'minValue:3:分钟',
+      strategy: 'minValue:1:分钟',
       errorMsg: '不能小于'
     }])
     v.add(form.stopDelay, [{
@@ -75,9 +88,6 @@ define(['jquery', 'art-template',
       errorMsg: '不能小于'
     }])
     v.add(form.ggsc, [{
-      strategy: 'isNonEmpty',
-      errorMsg: '不能为空'
-    },{
       strategy: 'isNumber',
       errorMsg: '请输入数字'
     }])
@@ -131,16 +141,10 @@ define(['jquery', 'art-template',
   function checkAutoModeInput(form) {
     let v = new Validator()
     v.add(form.sd, [{
-      strategy: 'isNonEmpty',
-      errorMsg: '不能为空'
-    },{
       strategy: 'isNumber',
       errorMsg: '请输入数字'
     }])
     v.add(form.ggsc, [{
-      strategy: 'isNonEmpty',
-      errorMsg: '不能为空'
-    },{
       strategy: 'isNumber',
       errorMsg: '请输入数字'
     }])
@@ -151,7 +155,7 @@ define(['jquery', 'art-template',
       strategy: 'isNumber',
       errorMsg: '请输入数字'
     },{
-      strategy: 'minValue:3:分钟',
+      strategy: 'minValue:1:分钟',
       errorMsg: '不能小于'
     }])
 
@@ -165,16 +169,7 @@ define(['jquery', 'art-template',
       strategy: 'minValue:30:秒',
       errorMsg: '不能小于'
     }])
-    v.add(form.openbeng, [{
-      strategy: 'isNonEmpty',
-      errorMsg: '不能为空'
-    },{
-      strategy: 'isNumber',
-      errorMsg: '请输入数字'
-    },{
-      strategy: 'minValue:3:分钟',
-      errorMsg: '不能小于'
-    }])
+
     v.add(form.setTime, [{
       strategy: 'isNonEmpty',
       errorMsg: '不能为空'
@@ -216,6 +211,17 @@ define(['jquery', 'art-template',
     $('#app-animation').on('click', '#jjtz', function () {
       confirm('是否紧急停止？', null, 'stop')
     })
+
+    $('#app-animation').on('click', '.app-sfa button', function () {
+      const ruleId = $(this).attr('data-ruleId')
+      const opera = $(this).attr('data-opera')
+      if (opera === 'close') {
+        confirm('是否关闭施肥阀？', ruleId, 'close')
+      } else {
+        confirm('是否打开施肥阀？', ruleId, 'open')
+      }
+    })
+
     // 关阀
     $('#app-animation').on('click', '.fa-closebtn', function () {
       let ruleId = $(this).attr('data-ruleId')
@@ -226,13 +232,13 @@ define(['jquery', 'art-template',
     // 手动模式
     $('#app-animation').on('click', '#mode-handle', function () {
       let oldMode = pty.mode
-      if (oldMode === '1') {
+      if (oldMode === 'handle') {
         layer.msg('当前已处在手动模式')
       } else if (oldMode === 'time') {
         layer.alert('请先停止时间控制模式！')
       } else if (oldMode === 'auto') {
         layer.alert('请先停止水分控制模式！')
-      } else if (oldMode === '' || oldMode === 'handle') {
+      } else if (oldMode === '') {
         layer.open({
           type: 1,
           title: '手动模式设置',
@@ -262,7 +268,14 @@ define(['jquery', 'art-template',
               }
             })
             rule = rule.join(',')
-            pty.setMode({type, cookie,start, end, rule})
+            layer.confirm('请确认各个参数',{
+              btn: ['确定', '取消']
+              },function () {
+              layer.closeAll()
+              // layer.close(layer.index)
+              pty.setMode({type, cookie,start, end, rule})
+              }
+            )
           }
           e.preventDefault()
         })
@@ -275,7 +288,7 @@ define(['jquery', 'art-template',
       let oldMode = pty.mode
       if (oldMode === 'time') {
         layer.msg('当前已处在时间控制模式')
-      } else if (oldMode === '' || oldMode === 'handle') {
+      } else if (oldMode === '') {
         layer.open({
           type: 1,
           title: '时间控制模式设置',
@@ -311,16 +324,26 @@ define(['jquery', 'art-template',
               s: parseInt(timeArr[2])
             }
             $('input[name="ggsc"]').each(function (index, item) {
-              ruletime.push(item.value)
+              if (item.value === '') item.value = 0
+              ruletime.push(item.value * 60)
             })
             ruletime = ruletime.join(',')
-            pty.setMode({type, cookie, time, start, end, ruletime})
+            layer.confirm('请确认各个参数',{
+                btn: ['确定', '取消']
+              },function () {
+              layer.closeAll()
+              // layer.close(layer.index)
+              pty.setMode({type, cookie, time, start, end, ruletime})
+              }
+            )
           }
           e.preventDefault()
         })
         // 填充默认值
         $('#mode-time-btn-default').on('click', setTimeModeDefault)
 
+      } else if (oldMode === 'handle') {
+        layer.alert('请先停止手动模式！')
       } else {
          layer.alert('请先停止水分控制模式！')
       }
@@ -331,7 +354,7 @@ define(['jquery', 'art-template',
       let oldMode = pty.mode
       if (oldMode === 'auto') {
         layer.msg('当前已处在水分控制模式')
-      } else if (oldMode === '' || oldMode === 'hanle') {
+      } else if (oldMode === '') {
         layer.open({
           type: 1,
           title: '水分控制模式设置',
@@ -358,20 +381,31 @@ define(['jquery', 'art-template',
             let ruletime = []
             let rules = []
             $('input[name="ggsc"]').each(function (index, item) {
-              ruletime.push($(this).val() * 60)
+              if (item.value === '') item.value = 0
+              ruletime.push(item.value * 60)
             })
             ruletime = ruletime.join(',')
             $('input[name="sd"]').each(function (index, item) {
-              rules.push($(this).val())
+              if (item.value === '') item.value = 0
+              rules.push(item.value)
             })
             rules = rules.join(',')
-            pty.setMode({type, cookie, start, end, loop, rules, ruletime})
+            layer.confirm('请确认各个参数',{
+                btn: ['确定', '取消']
+              },function () {
+              layer.closeAll()
+              console.log(ruletime, rules)
+              layer.close(layer.index)
+              pty.setMode({type, cookie, start, end, loop, rules, ruletime})
+              }
+            )
           }
         })
-
         // 填充默认值
         $('#mode-auto-btn-default').on('click', setAutoModeDefault)
 
+      } else if (oldMode === 'handle') {
+        layer.alert('请先停止手动模式！')
       } else {
         layer.alert('请先停止时间控制模式！')
       }

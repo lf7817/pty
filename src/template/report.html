@@ -1,21 +1,77 @@
 <div class="app-report">
-    <div class="time-select">
-        <input type="text" name="start-time" class="form-control" placeholder="起始日期" readonly>
-        <input type="text" name="stop-time" class="form-control" placeholder="截止日期" readonly>
-        <button class="btn btn-danger">查询</button>
-    </div>
+    <!--<div class="time-select">-->
+        <!--<input type="text" name="start-time" class="form-control" placeholder="起始日期" readonly>-->
+        <!--<input type="text" name="stop-time" class="form-control" placeholder="截止日期" readonly>-->
+        <!--<button class="btn btn-danger">查询</button>-->
+    <!--</div>-->
     <ul class="nav nav-tabs" role="tablist">
-        <li role="presentation" class="active"><a href="#fa" aria-controls="fa" role="tab" data-toggle="tab">开关阀</a></li>
-        <li role="presentation"><a href="#bpq" aria-controls="profile" role="tab" data-toggle="tab">变频器</a></li>
-        <li role="presentation"><a href="#water" aria-controls="water" role="tab" data-toggle="tab">土壤水分</a></li>
+        <!--<li role="presentation" class="active"><a href="#fa" aria-controls="fa" role="tab" data-toggle="tab">开关阀</a></li>-->
+        <li role="presentation" class="active"><a href="#bpq" aria-controls="profile" role="tab" data-toggle="tab">变频器</a></li>
+        <li role="presentation"><a href="#water1" aria-controls="water1" role="tab" data-toggle="tab">1号棚</a></li>
+        <li role="presentation"><a href="#water2" aria-controls="water2" role="tab" data-toggle="tab">2号棚</a></li>
+        <li role="presentation"><a href="#water3" aria-controls="water3" role="tab" data-toggle="tab">3号棚</a></li>
+        <li role="presentation"><a href="#water4" aria-controls="water4" role="tab" data-toggle="tab">4号棚</a></li>
+        <li role="presentation"><a href="#water5" aria-controls="water5" role="tab" data-toggle="tab">5号棚</a></li>
+        <li role="presentation"><a href="#water6" aria-controls="water6" role="tab" data-toggle="tab">6号棚</a></li>
+        <li role="presentation"><a href="#water7" aria-controls="water7" role="tab" data-toggle="tab">7号棚</a></li>
+        <li role="presentation"><a href="#water8" aria-controls="water8" role="tab" data-toggle="tab">8号棚</a></li>
     </ul>
     <div class="tab-content">
-        <div role="tabpanel" class="tab-pane fade in active" id="fa">1</div>
-        <div role="tabpanel" class="tab-pane fade" id="bpq">2</div>
-        <div role="tabpanel" class="tab-pane fade" id="water">3</div>
+        <!--<div role="tabpanel" class="tab-pane fade in active" id="fa">1</div>-->
+        <div role="tabpanel" class="tab-pane fade in active table-responsive" id="bpq" >
+        </div>
+        <div role="tabpanel" class="tab-pane fade table-responsive" id="water1">1号棚</div>
+        <div role="tabpanel" class="tab-pane fade table-responsive" id="water2">2号棚</div>
+        <div role="tabpanel" class="tab-pane fade table-responsive" id="water3">3号棚</div>
+        <div role="tabpanel" class="tab-pane fade table-responsive" id="water4">4号棚</div>
+        <div role="tabpanel" class="tab-pane fade table-responsive" id="water5">5号棚</div>
+        <div role="tabpanel" class="tab-pane fade table-responsive" id="water6">6号棚</div>
+        <div role="tabpanel" class="tab-pane fade table-responsive" id="water7">7号棚</div>
+        <div role="tabpanel" class="tab-pane fade table-responsive" id="water8">8号棚</div>
+        <div class="report-page" id="report-page"></div>
     </div>
 </div>
 
-<script type="text/html">
+<script type="text/html" id="tpl-bpq">
+    <table class="table table-hover table-bordered table-striped" style="margin-bottom: 0;">
+        <tr>
+            <th class="text-center">采集时间</th>
+            <th class="text-center">运行电压</th>
+            <th class="text-center">运行电流</th>
+            <th class="text-center">频率</th>
+            <th class="text-center">PID设定</th>
+            <th class="text-center">PID反馈</th>
+        </tr>
+        {{each list value, index}}
+        <tr>
+            <td class="text-center">{{value.createAt | dateFormat 'yyyy-MM-dd hh:mm:ss'}}</td>
+            <td class="text-center">{{value.yxdy}}V</td>
+            <td class="text-center">{{value.yxdl}}A</td>
+            <td class="text-center">{{value.pl}}Hz</td>
+            <td class="text-center">{{value.pids}}Mpa</td>
+            <td class="text-center">{{value.pidg}}Mpa</td>
+        </tr>
+        {{/each}}
+    </table>
+</script>
 
+<script type="text/html" id="tpl-peng">
+    <table class="table table-hover table-bordered table-striped" style="margin-bottom: 0;">
+        <tr>
+            <th class="text-center">采集时间</th>
+            <th class="text-center">空气温度</th>
+            <th class="text-center">空气湿度</th>
+            <th class="text-center">土壤水分</th>
+            <th class="text-center">光照度</th>
+        </tr>
+        {{each list value, index}}
+        <tr>
+            <td class="text-center">{{value.createAt | dateFormat 'yyyy-MM-dd hh:mm:ss'}}</td>
+            <td class="text-center">{{if value.kqwd === '-1'}}---{{else}}{{value.kqwd}}℃{{/if}}</td>
+            <td class="text-center">{{if value.kqsd === '-1'}}---{{else}}{{value.kqsd}}%{{/if}}</td>
+            <td class="text-center">{{if value.trsf === '-1'}}---{{else}}{{value.trsf}}%{{/if}}</td>
+            <td class="text-center">{{if value.gzd === '-1'}}---{{else}}{{value.gzd}}klux{{/if}}</td>
+        </tr>
+        {{/each}}
+    </table>
 </script>

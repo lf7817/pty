@@ -5,6 +5,9 @@ define(['router/routes', 'director', 'jquery', 'module/timer'], function (Routes
       clearDom()
       logout('192.168.2.241')
       timer.clear()
+    },
+    after () {
+      $(window).off('resize')
     }
   })
 
