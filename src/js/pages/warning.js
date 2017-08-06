@@ -76,6 +76,9 @@ define(['art-template', 'jedate'], function (template) {
     })
 
     $('#warning-search').on('click', function () {
+      startAt = $('input[name="start-time"]').val()
+      endAt = $('input[name="stop-time"]').val()
+
       getWarning(startAt, endAt).done(data => {
         if (data.code !== 0) alert('请重新登陆！')
         let html = template('tpl-warning', {list: data.param})

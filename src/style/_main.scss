@@ -46,7 +46,7 @@
 .app-animation .fa {
   position: absolute;
   left: 304px;
-  width: 580px;
+  width: 600px;
   height: 54px;
 }
 
@@ -111,26 +111,27 @@
   top: 28px;
   left: 392px;
   color: #fff;
-  font-size: 13px;
+  font-size: 14px;
 }
 .app-animation .fa .trsf {
    top: 30px;
    left: 384px;
+   font-size: 13px;
  }
 
 .app-animation .fa .kqwd {
-  top: 8px;
+  top: 2px;
   left: 302px;
   letter-spacing: 1px;
 }
 
 .app-animation .fa .kqsd {
-  top: 8px;
+  top: 2px;
   left: 392px;
 }
 
 .app-animation .fa .gzd {
-  top: 10px;
+  top: 2px;
   left: 480px;
 }
 .app-animation .fa1 {
@@ -182,7 +183,7 @@
 .app-mode {
   position: absolute;
   left: calc(392px + 50%);
-  //top: calc(50% - 214px);
+  top: -40px;
   width: 102px;
   border-radius: 6px;
   h3 {
@@ -191,7 +192,14 @@
 }
 
 .app-mode .emergency-stop {
-  //border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  line-height: 1.4;
+  letter-spacing: 3px;
+  font-size: 16px;
+  font-weight: bold;
+  background: url("../images/mode-hover.png") no-repeat;
+  background-size: 100% 100%;
 }
 
 .app-mode a {

@@ -40,7 +40,7 @@
 }
 
 .tab-pane {
-  height: calc(100% - 60px);
+  height: calc(100% - 20px);
   background: rgba( 255, 255, 255, 1);
 }
 
@@ -52,4 +52,7 @@
 .nav-tabs a {
   background: #428bca;
   color: #fff;
+  &:hover {
+    color: #000;
+  }
 }

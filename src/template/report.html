@@ -1,9 +1,9 @@
 <div class="app-report">
-    <!--<div class="time-select">-->
-        <!--<input type="text" name="start-time" class="form-control" placeholder="起始日期" readonly>-->
-        <!--<input type="text" name="stop-time" class="form-control" placeholder="截止日期" readonly>-->
-        <!--<button class="btn btn-danger">查询</button>-->
-    <!--</div>-->
+    <div class="time-select">
+        <input type="text" name="start-time" class="form-control" placeholder="起始日期" readonly>
+        <input type="text" name="stop-time" class="form-control" placeholder="截止日期" readonly>
+        <button class="btn btn-danger" id="report-search">查询</button>
+    </div>
     <ul class="nav nav-tabs" role="tablist">
         <!--<li role="presentation" class="active"><a href="#fa" aria-controls="fa" role="tab" data-toggle="tab">开关阀</a></li>-->
         <li role="presentation" class="active"><a href="#bpq" aria-controls="profile" role="tab" data-toggle="tab">变频器</a></li>
@@ -28,7 +28,6 @@
         <div role="tabpanel" class="tab-pane fade table-responsive" id="water6">6号棚</div>
         <div role="tabpanel" class="tab-pane fade table-responsive" id="water7">7号棚</div>
         <div role="tabpanel" class="tab-pane fade table-responsive" id="water8">8号棚</div>
-        <div class="report-page" id="report-page"></div>
     </div>
 </div>
 
@@ -42,6 +41,11 @@
             <th class="text-center">PID设定</th>
             <th class="text-center">PID反馈</th>
         </tr>
+        {{if list.length === 0}}
+        <tr>
+            <td colspan="6" class="text-center">未查找到数据</td>
+        </tr>
+        {{/if]}}
         {{each list value, index}}
         <tr>
             <td class="text-center">{{value.createAt | dateFormat 'yyyy-MM-dd hh:mm:ss'}}</td>
@@ -64,6 +68,11 @@
             <th class="text-center">土壤水分</th>
             <th class="text-center">光照度</th>
         </tr>
+        {{if list.length === 0}}
+        <tr>
+            <td colspan="6" class="text-center">未查找到数据</td>
+        </tr>
+        {{/if]}}
         {{each list value, index}}
         <tr>
             <td class="text-center">{{value.createAt | dateFormat 'yyyy-MM-dd hh:mm:ss'}}</td>

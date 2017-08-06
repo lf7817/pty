@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-define(['jquery', 'art-template', 'laypage', 'bootstrap'], function ($, template, laypage) {
+define(['jquery', 'art-template', 'jedate', 'bootstrap'], function ($, template, jedate) {
   let pbq = [], runData = [], pageCount = 0, pageSize = 10, lineHeight = 39.2
   template.defaults.imports.dateFormat =  function (date, format) {
     if (typeof date === "string") {
@@ -38,10 +38,10 @@ define(['jquery', 'art-template', 'laypage', 'bootstrap'], function ($, template
     return format;
   }
 
-  function getReport (pageSize, pageNow) {
+  function getReport (beginTime, endTime) {
     return $.ajax({
       type: 'get',
-      url: host + 'flow/query?pageSize='+ pageSize +'&pageNow=' + pageNow,
+      url: host + 'flow/query2?beginTime=' + beginTime + '&endTime=' + endTime,
       dataType: 'json',
       crossDomain: true,
       contentType: 'application/json',
@@ -58,28 +58,31 @@ define(['jquery', 'art-template', 'laypage', 'bootstrap'], function ($, template
     }
     pageCount = data.param.pageCount
     pbq = [], runData = []
+    if (data.param.length !== 0) {
+      data.param.forEach((item, i) => {
+        let {pidg, pids, pl, yxdl, yxdy, createAt} = item
+        let {kqsd, kqwd, trsf, gzd} = item
+        let b = {pidg, pids, pl, yxdl, yxdy, createAt}
+        pbq.push(b)
+        let tmp_kqsd = kqsd.split(',')
+        let tmp_kqwd = kqwd.split(',')
+        let tmp_trsf = trsf.split(',')
+        let tmp_gzd = gzd.split(',')
 
-    data.param.records.forEach((item, i) => {
-      let {pidg, pids, pl, yxdl, yxdy, createAt} = item
-      let {kqsd, kqwd, trsf, gzd} = item
-      let b = {pidg, pids, pl, yxdl, yxdy, createAt}
-      pbq.push(b)
-      let tmp_kqsd = kqsd.split(',')
-      let tmp_kqwd = kqwd.split(',')
-      let tmp_trsf = trsf.split(',')
-      let tmp_gzd = gzd.split(',')
-
-      tmp_gzd.forEach((item, index) => {
-        let obj = {}
-        obj.gzd = tmp_gzd[index]
-        obj.kqsd = tmp_kqsd[index]
-        obj.kqwd = tmp_kqwd[index]
-        obj.trsf = tmp_trsf[index]
-        obj.createAt = createAt
-        if (!runData[index]) runData[index] = []
-        runData[index].push(obj)
+        tmp_gzd.forEach((item, index) => {
+          let obj = {}
+          obj.gzd = tmp_gzd[index]
+          obj.kqsd = tmp_kqsd[index]
+          obj.kqwd = tmp_kqwd[index]
+          obj.trsf = tmp_trsf[index]
+          obj.createAt = createAt
+          if (!runData[index]) runData[index] = []
+          runData[index].push(obj)
+        })
       })
-    })
+    } else {
+      runData = [[],[],[],[],[],[],[],[]]
+    }
 
     let html = template('tpl-bpq', {list: pbq})
     document.getElementById('bpq').innerHTML = html
@@ -90,38 +93,34 @@ define(['jquery', 'art-template', 'laypage', 'bootstrap'], function ($, template
     })
   }
 
-  function render (pageSize) {
-    getReport(pageSize, 1).done(handle)
-      .done(data => {
-        laypage({
-          cont: $('#report-page'), //容器。值支持id名、原生dom对象，jquery对象,
-          pages: pageCount, //总页数
-          skip: true, //是否开启跳页
-          skin: '#AF0000',
-          groups: 6, //连续显示分页数
-          jump: function (obj, first) {
-            let pageNow = obj.curr
-            if (!first)
-              getReport(pageSize, pageNow).done(handle)
-          }
-        });
-      })
-  }
-
-
-
   return function () {
-    pageSize = Math.floor(($('.tab-pane').height() - lineHeight) / lineHeight)
-    $(window).on('resize', function () {
-      pageSize = Math.floor(($('.tab-pane').height() - lineHeight) / lineHeight)
-      render(pageSize)
-    })
-
     $('#myTabs a').click(function (e) {
       e.preventDefault()
       $(this).tab('show')
     })
-    render(pageSize)
+
+    $('input[name="start-time"]').jeDate({
+      format:'YYYY/MM/DD',
+      isinitVal:true,
+      initAddVal:{MM:"-1"},   //初始化日期加3个月
+      zIndex: 9999999999999999
+    })
+
+    $('input[name="stop-time"]').jeDate({
+      format:'YYYY/MM/DD',
+      isinitVal:true,
+      zIndex: 9999999999999999
+    })
+    let beginTime = $('input[name="start-time"]').val().split('/').join('')
+    let endTime = $('input[name="stop-time"]').val().split('/').join('')
+
+    getReport(beginTime, endTime).done(handle)
+
+    $('#report-search').on('click', function () {
+      beginTime = $('input[name="start-time"]').val().split('/').join('')
+      endTime = $('input[name="stop-time"]').val().split('/').join('')
+      getReport(beginTime, endTime).done(handle)
+    })
   }
 
 })

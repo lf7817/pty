@@ -1,4 +1,9 @@
 <script id="tpl-warning" type="text/html" >
+    {{if list.length === 0}}
+        <tr>
+            <td colspan="3" class="text-center">未查找到数据</td>
+        </tr>
+    {{/if}}
     {{each list}}
     <tr>
         <td>{{$value.createAt | dateFormat 'yyyy-MM-dd hh:mm:ss'}}</td>
